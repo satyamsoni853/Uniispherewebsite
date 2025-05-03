@@ -1,0 +1,123 @@
+.footer {
+  background-color: #eaffa5; /* Light background color */
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid #ddd; /* Optional: subtle border at the top */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* gap: 500px; */
+  /* width: 100%; */
+  width: 80vw;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo Styling */
+.footer-logo {
+  width: 50px; /* Adjust based on your logo size */
+  height: auto;
+  border-radius: 60%;
+  margin-bottom: 5px; /* Reduced margin to bring logo closer to text */
+}
+
+/* Styling for the UNISPHERE title */
+.footer-title {
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Individual letter styles */
+.F-letter-u,
+.F-letter-n,
+.F-letter-i1,
+.F-letter-s,
+.F-letter-p,
+.F-letter-h,
+.F-letter-e,
+.F-letter-r,
+.F-letter-e2 {
+  display: inline-block;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #000; /* Default color for letters */
+}
+
+/* Specific colors for letters (adjust based on your design) */
+.F-letter-u { color: #000; }
+.F-letter-n { color: #000; }
+.F-letter-i1 { color: #000; }
+.F-letter-s { color: #000; }
+.F-letter-p { color: #000; }
+.F-letter-h { color: #000; }
+.F-letter-e { color: #000; }
+.F-letter-r { color: #000; }
+.F-letter-e2 { color: #000; }
+
+/* Adding the multicolored dots above the title */
+
+
+.footer-tagline {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+  color: #333;
+  line-height: 1.5; /* Adjust line spacing for the <br /> */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 34px;
+
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+.footer-right {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 28px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

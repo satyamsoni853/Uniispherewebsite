@@ -1,0 +1,47 @@
+.our-goal-section {
+  position: relative;
+  padding: 40px 20px;
+  text-align: left;
+  max-width: 600px; /* Adjust based on your layout */
+  margin: 0 auto;
+  overflow: hidden; /* Ensure decorative shapes don't overflow */
+}
+
+/* Decorative background shapes */
+.our-goal-section::before,
+.our-goal-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2; /* Adjust opacity for a subtle effect */
+}
+
+.our-goal-section::before {
+  width: 100px;
+  height: 100px;
+  background-color: #f5e6cc; /* Light beige color for the left shape */
+  top: 10px;
+  left: -50px;
+}
+
+.our-goal-section::after {
+  width: 120px;
+  height: 120px;
+  background-color: #d6eaff; /* Light blue color for the right shape */
+  bottom: 10px;
+  right: -60px;
+}
+
+.our-goal-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.our-goal-description {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}

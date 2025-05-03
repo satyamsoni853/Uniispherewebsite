@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutPage.css';
+import Video from './Video.mp4';
 
 function AboutPage() {
   return (
@@ -31,6 +32,14 @@ function AboutPage() {
         <p>
           Unisphere is a student networking app designed to connect university students for academic collaboration, social networking, and career development. It offers features like secure messaging, event discovery, study groups, mentorship, freelancing opportunities, and psychological support to create a comprehensive platform for student engagement and growth.
         </p>
+      </div>
+
+      {/* Video Section */}
+      <div className="video-section">
+        <video className="centered-video" controls>
+          <source src={Video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );
