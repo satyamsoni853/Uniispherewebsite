@@ -7,20 +7,24 @@ import Peoples from './Components/Peoples/Peoples';
 import Footer from './Components/Footer/Footer';
 import  Collaborates from './Components/Collaborates/Collaborates'
 import Features from './Components/Features/Features';
+import HumanLibrary from  './Components/HumanLibrary/HumanLibrary'
+import Blog from  './Components/Blog/Blog'
+import Connection from  './Components/Connections/Connections'
+
 function App() {
   return (
     <BrowserRouter>
-    <Nav
+    <Navbar/>
+    <AboutPage/>
+    <Peoples/>
+    <Connection/>
+    <HumanLibrary/>
+    <Blog/>
+    
+    <Collaborates/>
+    <Footer/>
       
-      <Routes>
-        {/* <Route path="/" element={<Navbar />} /> */}
-        {/* <Route path="/" element={<AboutPage />} /> */}
-        {/* <Route path="/" element={<Peoples />} /> */}
-        {/* <Route path="/" element={<Footer />} /> */}
-        {/* <Route path="/" element={<Collaborates />} /> */}
-        <Route path="/" element={<Features />} />
-
-      </Routes>
+    
     </BrowserRouter>
   );
 }
