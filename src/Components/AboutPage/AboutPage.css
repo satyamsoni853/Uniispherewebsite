@@ -1,0 +1,80 @@
+.about-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fff; /* White background */
+  position: relative;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 8rem;
+  letter-spacing: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Individual letter colors */
+.letter-u { color: #ff4d4d; } /* Red */
+.letter-n { color: #224d44; } /* Blue */
+.letter-i1 { color: #fff04d; } /* Red */
+.letter-s { color: #0a0706; } /* Blue */
+.letter-p { color: #ff4d4d; } /* Red */
+.letter-h { color: #eb5252; } /* Gray */
+.letter-e { color: #d38537; } /* Blue */
+.letter-r { color: #3cc28e; } /* Red */
+.letter-e2 { color: #c61c1c; } /* Blue */
+
+.tagline {
+  font-size: 2.5rem;
+  color: #333;
+  /* margin-bottom: 20px; */
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-button {
+  padding: 10px 40px;
+  gap: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0; /* Light gray */
+  color: #333;
+  cursor: pointer;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000; /* Black */
+  color: #fff; /* White text */
+  cursor: pointer;
+}
+
+/* About Us Section */
+.about-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}

@@ -1,0 +1,72 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between logo and links */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between links and dividers */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333; /* Dark text color */
+  font-size: 26px;
+  padding: 8px 20px;
+  border-radius: 22px;
+  background-color: #f5e7e7;
+}
+
+.divider {
+  color: #ccc; /* Light gray for the divider */
+  font-size: 56px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+  margin-right: 50px;
+}
+
+.login-button {
+  padding: 12px 45px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f0f0f0; 
+  color: #333;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.signup-button {
+  padding: 12px 45px;
+  border: none;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: #000; /* Black background for Sign Up button */
+  color: #fff; /* White text */
+  cursor: pointer;
+}
