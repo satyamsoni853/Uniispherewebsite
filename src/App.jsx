@@ -10,6 +10,7 @@ import Features from './Components/Features/Features';
 function App() {
   return (
     <BrowserRouter>
+    <Nav
       
       <Routes>
         {/* <Route path="/" element={<Navbar />} /> */}
