@@ -1,30 +1,28 @@
-import './App.css';
+import "./App.css";
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar/Navbar';
-import AboutPage from './Components/AboutPage/AboutPage';
-import Peoples from './Components/Peoples/Peoples';
-import Footer from './Components/Footer/Footer';
-import  Collaborates from './Components/Collaborates/Collaborates'
-import Features from './Components/Features/Features';
-import HumanLibrary from  './Components/HumanLibrary/HumanLibrary'
-import Blog from  './Components/Blog/Blog'
-import Connection from  './Components/Connections/Connections'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+import AboutPage from "./Components/AboutPage/AboutPage";
+import Peoples from "./Components/Peoples/Peoples";
+import Footer from "./Components/Footer/Footer";
+import Collaborates from "./Components/Collaborates/Collaborates";
+import Features from "./Components/Features/Features";
+import HumanLibrary from "./Components/HumanLibrary/HumanLibrary";
+import Blog from "./Components/Blog/Blog";
+import Connection from "./Components/Connections/Connections";
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
-    <AboutPage/>
-    <Peoples/>
-    <Connection/>
-    <HumanLibrary/>
-    <Blog/>
-    
-    <Collaborates/>
-    <Footer/>
-      
-    
+      <Navbar />
+      <AboutPage />
+      <Peoples />
+      <Connection />
+      <HumanLibrary />
+      <Blog />
+
+      <Collaborates />
+      <Footer />
     </BrowserRouter>
   );
 }
