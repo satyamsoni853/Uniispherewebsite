@@ -22,47 +22,47 @@
 
 /* Individual letter colors and shadow */
 .letter-u {
-  color: #ff6f61; /* Coral red for U */
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); /* Shadow effect */
+  color: #ff6f61;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-n {
-  color: #6b7280; /* Gray for N */
+  color: #6b7280;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-i1 {
-  color: #34d399; /* Teal for both I's */
+  color: #34d399;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-s {
-  color: #facc15; /* Yellow for S */
+  color: #facc15;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-p {
-  color: #3b82f6; /* Blue for P */
+  color: #3b82f6;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-h {
-  color: #ec4899; /* Pink for H */
+  color: #ec4899;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-e {
-  color: #10b981; /* Green for first E */
+  color: #10b981;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-r {
-  color: #8b5cf6; /* Purple for R */
+  color: #8b5cf6;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .letter-e2 {
-  color: #f97316; /* Orange for second E */
+  color: #f97316;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -185,10 +185,82 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .about-page {
+    padding: 15px;
+  }
+
   .title {
-    font-size: 5rem;
+    font-size: 9rem;
     letter-spacing: 8px;
+  }
+
+  .letter-u,
+  .letter-n,
+  .letter-i1,
+  .letter-s,
+  .letter-p,
+  .letter-h,
+  .letter-e,
+  .letter-r,
+  .letter-e2 {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .tagline {
+    font-size: 2rem;
+  }
+
+  .auth-buttons {
+    gap: 70px;
+  }
+
+  .About-login-button,
+  .About-signup-button {
+    padding: 15px 40px;
+  }
+
+  .about-section h2 {
+    font-size: 30px;
+  }
+
+  .about-section p {
+    font-size: 22px;
+  }
+
+  .video-container,
+  .centered-video {
+    width: 500px;
+    height: 500px;
+  }
+
+  .mute-button {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 6rem;
+    letter-spacing: 6px;
+  }
+
+  .letter-u,
+  .letter-n,
+  .letter-i1,
+  .letter-s,
+  .letter-p,
+  .letter-h,
+  .letter-e,
+  .letter-r,
+  .letter-e2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   }
 
   .tagline {
@@ -199,9 +271,9 @@
     gap: 50px;
   }
 
-  .login-button,
-  .signup-button {
-    padding: 8px 40px;
+  .About-login-button,
+  .About-signup-button {
+    padding: 12px 35px;
     font-size: 14px;
   }
 
@@ -227,9 +299,25 @@
 }
 
 @media (max-width: 480px) {
+  .about-page {
+    padding: 8px;
+  }
+
   .title {
-    font-size: 3rem;
-    letter-spacing: 5px;
+    font-size: 4rem;
+    letter-spacing: 4px;
+  }
+
+  .letter-u,
+  .letter-n,
+  .letter-i1,
+  .letter-s,
+  .letter-p,
+  .letter-h,
+  .letter-e,
+  .letter-r,
+  .letter-e2 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
 
   .tagline {
@@ -241,9 +329,9 @@
     gap: 20px;
   }
 
-  .login-button,
-  .signup-button {
-    padding: 8px 30px;
+  .About-login-button,
+  .About-signup-button {
+    padding: 10px 30px;
     font-size: 12px;
   }
 
@@ -269,6 +357,41 @@
 }
 
 @media (max-width: 360px) {
+  .title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  .letter-u,
+  .letter-n,
+  .letter-i1,
+  .letter-s,
+  .letter-p,
+  .letter-h,
+  .letter-e,
+  .letter-r,
+  .letter-e2 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .About-login-button,
+  .About-signup-button {
+    padding: 8px 25px;
+    font-size: 11px;
+  }
+
+  .about-section h2 {
+    font-size: 20px;
+  }
+
+  .about-section p {
+    font-size: 14px;
+  }
+
   .video-container,
   .centered-video {
     width: 250px;

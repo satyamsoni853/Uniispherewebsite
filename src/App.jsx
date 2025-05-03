@@ -19,8 +19,9 @@ function App() {
       <AboutPage />
       <Peoples />
       <Connection />
-      <HumanLibrary />
       <Blog />
+      <HumanLibrary />
+  
 
       <Collaborates />
       <OurGoal/>

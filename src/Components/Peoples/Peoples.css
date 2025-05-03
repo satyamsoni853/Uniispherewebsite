@@ -34,7 +34,7 @@
   padding: 20px;
   width: 23%;
   text-align: center;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow to right and bottom */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Shadow to right and bottom */
 }
 
 /* Unique colors for each card */
