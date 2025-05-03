@@ -1,18 +1,18 @@
 .peoples-section {
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #fff; /* White background */
+  background-color: #fff;
   margin: 0 80px;
 }
-.People-heading{
-  font-size: 4rem;
-}
-.peoples-section h2 {
-  font-size: 3rem;
+
+.People-heading {
+  font-size: 5rem;
   color: #333;
   text-align: left;
-  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-bottom: 50px;
 }
+
 
 .peoples-container {
   display: flex;
@@ -22,44 +22,44 @@
 }
 
 .peoples-container.second-row {
-  justify-content: center; /* Center the two cards in the second row */
+  justify-content: center;
 }
 
 .peoples-container.second-row .person-card {
-  width: 23%; /* Same width as the first row for consistency */
+  width: 23%;
 }
 
 .person-card {
   border-radius: 10px;
   padding: 20px;
-  width: 23%; /* Adjust width to fit four cards in the first row */
+  width: 23%;
   text-align: center;
-  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow to bottom and left */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow to right and bottom */
 }
 
 /* Unique colors for each card */
 .color-1 {
-  background-color: #f5e7e7; /* Light pink (original color) */
+  background-color: #f5e7e7;
 }
 
 .color-2 {
-  background-color: #e7f5e7; /* Light green */
+  background-color: #e7f5e7;
 }
 
 .color-3 {
-  background-color: #e7e7f5; /* Light blue */
+  background-color: #e7e7f5;
 }
 
 .color-4 {
-  background-color: #f5f5e7; /* Light yellow */
+  background-color: #f5f5e7;
 }
 
 .color-5 {
-  background-color: #f5e7f5; /* Light purple */
+  background-color: #f5e7f5;
 }
 
 .color-6 {
-  background-color: #e7f5f5; /* Light cyan */
+  background-color: #e7f5f5;
 }
 
 .person-image {
@@ -86,4 +86,128 @@
   font-size: 14px;
   color: #666;
   line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .peoples-section {
+    margin: 0 40px;
+  }
+
+  .People-heading {
+    font-size: 3.5rem;
+  }
+
+  .peoples-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .peoples-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .person-card,
+  .peoples-container.second-row .person-card {
+    width: 45%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* Reduced shadow for smaller screens */
+  }
+
+  .person-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .person-card h3 {
+    font-size: 18px;
+  }
+
+  .person-card .role {
+    font-size: 14px;
+  }
+
+  .person-card .details {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .peoples-section {
+    margin: 0 20px;
+  }
+
+  .People-heading {
+    font-size: 3rem;
+  }
+
+  .peoples-section h2 {
+    font-size: 2rem;
+  }
+
+  .person-card,
+  .peoples-container.second-row .person-card {
+    width: 48%;
+    padding: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .person-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .person-card h3 {
+    font-size: 16px;
+  }
+
+  .person-card .role {
+    font-size: 13px;
+  }
+
+  .person-card .details {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .peoples-section {
+    margin: 0 10px;
+  }
+
+  .People-heading {
+    font-size: 2.5rem;
+  }
+
+  .peoples-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .peoples-container {
+    gap: 10px;
+  }
+
+  .person-card,
+  .peoples-container.second-row .person-card {
+    width: 100%;
+    padding: 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .person-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .person-card h3 {
+    font-size: 14px;
+  }
+
+  .person-card .role {
+    font-size: 12px;
+  }
+
+  .person-card .details {
+    font-size: 11px;
+  }
 }

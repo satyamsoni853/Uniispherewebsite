@@ -59,9 +59,9 @@ function Peoples() {
         {/* Person 6 */}
         <div className="person-card color-6">
           <img src={Images6} alt="Rohan" className="person-image" />
-          <h3>"Rohan"</h3>
-          <p className="role">Mechanical Engineering</p>
-          <p className="details">Student at NIT Trichy | Works on robotics projects | Aspires to be an innovator | Enjoys hiking.</p>
+          <h3>"Satyam Soni"</h3>
+          <p className="role">Frontend Developer</p>
+          <p className="details">Student at KNIPSS | Works on robotics projects | Aspires to be an innovator | Enjoys hiking.</p>
         </div>
       </div>
     </div>

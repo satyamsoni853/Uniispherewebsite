@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './AboutPage.css';
 import Video from './Video.mp4';
 
 function AboutPage() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+    }
+  };
+
   return (
     <div className="about-page">
       {/* Header Section */}
@@ -21,8 +31,8 @@ function AboutPage() {
         </h1>
         <p className="tagline">"Connect" "Collaborate" "Success"</p>
         <div className="auth-buttons">
-          <button className="login-button">Log In</button>
-          <button className="signup-button">Sign Up</button>
+          <button className="About-login-button">Log In</button>
+          <button className="About-signup-button">Sign Up</button>
         </div>
       </div>
 
@@ -36,10 +46,25 @@ function AboutPage() {
 
       {/* Video Section */}
       <div className="video-section">
-        <video className="centered-video" controls>
-          <source src={Video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="video-container">
+          <video
+            className="centered-video"
+            autoPlay
+            loop
+            muted={isMuted}
+            ref={videoRef}
+            playsInline
+          >
+            <source src={Video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="video-controls">
+            <button
+              onClick={toggleMute}
+              className={`mute-button ${isMuted ? 'muted' : ''}`}
+            ></button>
+          </div>
+        </div>
       </div>
     </div>
   );

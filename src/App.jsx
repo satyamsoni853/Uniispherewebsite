@@ -10,6 +10,7 @@ import Features from "./Components/Features/Features";
 import HumanLibrary from "./Components/HumanLibrary/HumanLibrary";
 import Blog from "./Components/Blog/Blog";
 import Connection from "./Components/Connections/Connections";
+import OurGoal from './Components/OurGoal/OurGoal'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Blog />
 
       <Collaborates />
+      <OurGoal/>
       <Footer />
     </BrowserRouter>
   );

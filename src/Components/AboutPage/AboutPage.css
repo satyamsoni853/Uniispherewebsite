@@ -2,7 +2,7 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #fff; /* White background */
+  background-color: #fff;
   position: relative;
 }
 
@@ -12,27 +12,63 @@
 }
 
 .title {
-  font-size: 8rem;
+  font-size: 12rem;
   letter-spacing: 10px;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* Individual letter colors */
-.letter-u { color: #ff4d4d; } /* Red */
-.letter-n { color: #224d44; } /* Blue */
-.letter-i1 { color: #fff04d; } /* Red */
-.letter-s { color: #0a0706; } /* Blue */
-.letter-p { color: #ff4d4d; } /* Red */
-.letter-h { color: #eb5252; } /* Gray */
-.letter-e { color: #d38537; } /* Blue */
-.letter-r { color: #3cc28e; } /* Red */
-.letter-e2 { color: #c61c1c; } /* Blue */
+/* Individual letter colors and shadow */
+.letter-u {
+  color: #ff6f61; /* Coral red for U */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); /* Shadow effect */
+}
+
+.letter-n {
+  color: #6b7280; /* Gray for N */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-i1 {
+  color: #34d399; /* Teal for both I's */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-s {
+  color: #facc15; /* Yellow for S */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-p {
+  color: #3b82f6; /* Blue for P */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-h {
+  color: #ec4899; /* Pink for H */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-e {
+  color: #10b981; /* Green for first E */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-r {
+  color: #8b5cf6; /* Purple for R */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.letter-e2 {
+  color: #f97316; /* Orange for second E */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
 
 .tagline {
   font-size: 2.5rem;
   color: #333;
-  /* margin-bottom: 20px; */
 }
 
 .auth-buttons {
@@ -41,22 +77,21 @@
   gap: 100px;
 }
 
-.login-button {
-  padding: 10px 50px;
-  gap: 50px;
+.About-login-button {
+  padding: 20px 50px;
   border: 1px solid #ccc;
   border-radius: 15px;
-  background-color: #f0f0f0; /* Light gray */
+  background-color: #f0f0f0;
   color: #333;
   cursor: pointer;
 }
 
-.signup-button {
-  padding: 10px 20px;
+.About-signup-button {
+  padding: 20px 50px;
   border: none;
-  border-radius: 5px;
-  background-color: #000; /* Black */
-  color: #fff; /* White text */
+  border-radius: 15px;
+  background-color: #000;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -76,13 +111,9 @@
 
 .about-section p {
   font-size: 26px;
-  
   color: #666;
   line-height: 1.5;
 }
-/* AboutPage.css */
-
-/* Existing styles for header, title, about-section, etc. remain unchanged */
 
 /* Video Section */
 .video-section {
@@ -93,8 +124,160 @@
   width: 100%;
 }
 
+.video-container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+}
+
 .centered-video {
-  max-width: 80%; /* Adjust as needed */
-  height: auto;
-  border-radius: 8px; /* Optional: for rounded corners */
+  width: 700px;
+  height: 700px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Hide default video controls */
+.centered-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.centered-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mute-button {
+  padding: 8px 12px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mute-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mute-button::before {
+  content: '🔊';
+}
+
+.mute-button.muted::before {
+  content: '🔇';
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 5rem;
+    letter-spacing: 8px;
+  }
+
+  .tagline {
+    font-size: 1.8rem;
+  }
+
+  .auth-buttons {
+    gap: 50px;
+  }
+
+  .login-button,
+  .signup-button {
+    padding: 8px 40px;
+    font-size: 14px;
+  }
+
+  .about-section h2 {
+    font-size: 28px;
+  }
+
+  .about-section p {
+    font-size: 20px;
+  }
+
+  .video-container,
+  .centered-video {
+    width: 400px;
+    height: 400px;
+  }
+
+  .mute-button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 3rem;
+    letter-spacing: 5px;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .login-button,
+  .signup-button {
+    padding: 8px 30px;
+    font-size: 12px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+  }
+
+  .video-container,
+  .centered-video {
+    width: 300px;
+    height: 300px;
+  }
+
+  .mute-button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .video-container,
+  .centered-video {
+    width: 250px;
+    height: 250px;
+  }
+
+  .mute-button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
 }

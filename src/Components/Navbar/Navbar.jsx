@@ -11,18 +11,18 @@ function Navbar() {
           <img src={Unispherelogo} alt="Unisphere Logo" className="logo" />
         </div>
         <div className="nav-links">
-          <a href="#" className="nav-link">Human Library</a>
-          <span className="divider">|</span>
-          <a href="#" className="nav-link">Guidenest</a>
-          <span className="divider">|</span>
-          <a href="#" className="nav-link">Blogs</a>
+          <a href="#" className="nav-link Navbar-Human-Library">Human Library</a>
+          <span className="Navbar-divider">|</span>
+          <a href="#" className="nav-link Navbar-Guidenest">Guidenest</a>
+          <span className="Navbar-divider">|</span>
+          <a href="#" className="nav-link Navbar-Blogs">Blogs</a>
         </div>
       </div>
 
       {/* Right side: Login and Sign Up buttons */}
       <div className="right-section">
-        <button className="login-button">Log In</button>
-        <button className="signup-button">Sign Up</button>
+        <button className="Navbar-login-button">Log In</button>
+        <button className="Navbar-signup-button">Sign Up</button>
       </div>
     </nav>
   );

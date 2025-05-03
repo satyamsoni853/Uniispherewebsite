@@ -1,8 +1,7 @@
 .collaborates-section {
-  background-color: #f5f5f5; 
-  padding: 20px 40px;
+  background: #E5EDFF;
+  padding: 50px 40px;
   text-align: center;
-  /* width: 100%; */
 }
 
 .collaborates-title {
@@ -16,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Space between the items */
+  gap: 20px;
 }
 
 .collaborate-item {
@@ -26,23 +25,105 @@
 }
 
 .collaborate-logo {
-  width: 150px; /* Adjust based on your logo size */
+  width: 150px;
   height: 150px;
   margin-bottom: 10px;
   border-radius: 50%;
 }
 
 .collaborate-label {
-  font-size: 24px;
-  color: #333;
+  font-size: 30px;
+  color: black;
   margin: 0;
   text-align: center;
-  line-height: 1.4; /* Adjust for better readability */
+  line-height: 1.4;
 }
 
 .divider {
   width: 1px;
-  height: 150px; /* Adjust height to match the logo height */
-  background-color: #333; /* Color of the vertical line */
+  height: 150px;
+  background-color: #333;
   margin: 0 150px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .collaborates-section {
+    padding: 40px 30px;
+  }
+
+  .collaborates-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .collaborate-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .collaborate-label {
+    font-size: 24px;
+  }
+
+  .divider {
+    height: 120px;
+    margin: 0 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collaborates-section {
+    padding: 30px 20px;
+  }
+
+  .collaborates-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .collaborates-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .collaborate-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .collaborate-label {
+    font-size: 20px;
+  }
+
+  .divider {
+    width: 80%;
+    height: 1px;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .collaborates-section {
+    padding: 20px 15px;
+  }
+
+  .collaborates-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .collaborate-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .collaborate-label {
+    font-size: 16px;
+  }
+
+  .divider {
+    width: 60%;
+    margin: 15px 0;
+  }
 }
