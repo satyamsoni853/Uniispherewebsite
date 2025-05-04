@@ -1,0 +1,36 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Allows clicks to pass through */
+  overflow: hidden;
+}
+
+.bg-img {
+  width: 80px;
+  height: auto;
+  opacity: 0.6;
+  position: absolute;
+}
+
+/* Position 5 images on the left and 5 on the right */
+.img-0 { top: 10%; left: 0%; }  /* Left side */
+.img-1 { top: 40%; left: 0%; }
+.img-2 { top: 55%; left: 0%; }
+.img-3 { top: 70%; left: 0%; }
+.img-4 { top: 90%; left: 0%; }
+.img-5 { top: 10%; left: 95%; } /* Right side */
+.img-6 { top: 30%; left: 95%; }
+.img-7 { top: 50%; left: 95%; }
+.img-8 { top: 70%; left: 95%; }
+.img-9 { top: 90%; left: 95%; }
+
+@media (max-width: 768px) {
+  /* Hide 6 images to balance visibility on mobile */
+  .img-0, .img-2, .img-4, .img-5, .img-7, .img-9 {
+    display: none;
+  }
+}

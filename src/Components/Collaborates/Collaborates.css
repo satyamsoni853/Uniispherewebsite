@@ -2,6 +2,7 @@
   background: #E5EDFF;
   padding: 50px 40px;
   text-align: center;
+  min-height: 400px; /* Prevent layout shift during animations */
 }
 
 .collaborates-title {
@@ -22,6 +23,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  will-change: transform, opacity; /* Optimize animation performance */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .collaborate-logo {

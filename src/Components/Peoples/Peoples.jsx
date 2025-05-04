@@ -1,81 +1,195 @@
-import React from 'react';
-import './Peoples.css';
-import Images1 from './Images1.svg';
-import Images2 from './Images1.svg';
-import Images3 from './Images2.svg';
-import Images4 from './Images3.svg';
-import Images5 from './Images4.svg';
-import Images6 from './Images4.svg';
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import "./Peoples.css";
+import Images1 from "./Images1.svg";
+import Images2 from "./Images2.svg";
+import Images3 from "./Images3.svg";
+import Images4 from "./Images4.svg";
 
 function Peoples() {
+  const shouldReduceMotion = useReducedMotion();
+  const [isDesktopOrTablet, setIsDesktopOrTablet] = useState(true); // Default to true for safety
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { amount: 0.2 }); // Trigger every time 20% visible
+
+  // Handle media query with error boundary
+  useEffect(() => {
+    try {
+      const mediaQuery = window.matchMedia("(min-width: 769px)");
+      setIsDesktopOrTablet(mediaQuery.matches);
+      const handleResize = () => setIsDesktopOrTablet(mediaQuery.matches);
+      mediaQuery.addEventListener("change", handleResize);
+      return () => mediaQuery.removeEventListener("change", handleResize);
+    } catch (error) {
+      console.error("Media query error:", error);
+      setIsDesktopOrTablet(true); // Fallback to enable animations
+    }
+  }, []);
+
+  // Debug animation conditions
+  useEffect(() => {
+    console.log("Animation conditions:", {
+      isInView,
+      isDesktopOrTablet,
+      shouldReduceMotion,
+    });
+  }, [isInView, isDesktopOrTablet, shouldReduceMotion]);
+
+  // Animation variants for first row (from top)
+  const topRowVariants = {
+    hidden: { y: -50, opacity: 0 },
+    visible: (index) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: index * 0.2,
+      },
+    }),
+  };
+
+  // Animation variants for second row (from bottom)
+  const bottomRowVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: (index) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: index * 0.2,
+      },
+    }),
+  };
+
   return (
-    <div className="peoples-section">
-      <h2 className='People-heading' >People</h2>
-      {/* First Row: 4 People */}
+    <div className="peoples-section" ref={sectionRef}>
+      <h2 className="People-heading">People</h2>
+      {/* First Row: 4 People (from top) */}
       <div className="peoples-container">
-        {/* Person 1 */}
-        <div className="person-card color-1">
+        <motion.div
+          className="person-card color-1"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={0}
+        >
           <img src={Images1} alt="Himanshu" className="person-image" />
-          <h3>"Himanshu"</h3>
+          <h3>Himanshu</h3>
           <p className="role">Business Manager</p>
-          <p className="details">Student at Maters Union | Building a Startup | Want to be a sports person.</p>
-        </div>
+          <p className="details">
+            Student at Masters Union | Building a Startup | Wants to be a sports person.
+          </p>
+        </motion.div>
 
-        {/* Person 2 */}
-        <div className="person-card color-2">
+        <motion.div
+          className="person-card color-2"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={1}
+        >
           <img src={Images2} alt="Tarun" className="person-image" />
-          <h3>"Tarun"</h3>
+          <h3>Tarun</h3>
           <p className="role">Bachelors in UI/UX</p>
-          <p className="details">Student at University of Delhi | Works at Unisphere | Previously worked in 3 different continents | Teamed up with Actress and Influencers.</p>
-        </div>
+          <p className="details">
+            Student at University of Delhi | Works at Unisphere | Previously worked in 3 different continents | Teamed up with Actress and Influencers.
+          </p>
+        </motion.div>
 
-        {/* Person 3 */}
-        <div className="person-card color-3">
-          <img src={Images6} alt="Shubham" className="person-image" />
-          <h3>"Khushboo"</h3>
+        <motion.div
+          className="person-card color-3"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={2}
+        >
+          <img src={Images3} alt="Khushboo" className="person-image" />
+          <h3>Khushboo</h3>
           <p className="role">MBA</p>
-          <p className="details">Student at UPES | Works as a Marketing Manager | Wants to be a successful Marketing Expert | Likes to travel a lot.</p>
-        </div>
+          <p className="details">
+            Student at UPES | Works as a Marketing Manager | Wants to be a successful Marketing Expert | Likes to travel a lot.
+          </p>
+        </motion.div>
 
-        {/* Person 4 */}
-        
-        <div className="person-card color-4">
-          <img src={Images4} alt="Arshall" className="person-image" />
-          <h3>"Abhishek"</h3>
-          <p className="role">Btech</p>
-          <p className="details">student at GNOIT/Work at uniisphere | want to be a data analyst | Like to travel</p>
-        </div>
+        <motion.div
+          className="person-card color-4"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={3}
+        >
+          <img src={Images4} alt="Abhishek" className="person-image" />
+          <h3>Abhishek</h3>
+          <p className="role">BTech</p>
+          <p className="details">
+            Student at GNOIT | Works at Unisphere | Wants to be a data analyst | Likes to travel.
+          </p>
+        </motion.div>
       </div>
 
-      {/* Second Row: 2 People */}
+      {/* Second Row: 4 People (from bottom) */}
       <div className="peoples-container second-row">
-        {/* Person 5 */}
-        <div className="person-card color-5">
-          <img src={Images1} alt="Priya" className="person-image" />
-          <h3>"Ansh "</h3>
+        <motion.div
+          className="person-card color-5"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={0}
+        >
+          <img src={Images1} alt="Ansh" className="person-image" />
+          <h3>Ansh</h3>
           <p className="role">Computer Science</p>
-          <p className="details">Student at Masters union / loves travelling.</p>
-        </div>
-        <div className="person-card color-5">
-          <img src={Images1} alt="Priya" className="person-image" />
-          <h3>"Karthikey Pandey"</h3>
-          <p className="role">Computer Science</p>
-          <p className="details">Student at IIT Bombay | Intern at TechCorp | Passionate about AI | Loves coding and hackathons.</p>
-        </div>
-        <div className="person-card color-5">
-          <img src={Images1} alt="Priya" className="person-image" />
-          <h3>"Karthikey Pandey"</h3>
-          <p className="role">Computer Science</p>
-          <p className="details">Student at IIT Bombay | Intern at TechCorp | Passionate about AI | Loves coding and hackathons.</p>
-        </div>
+          <p className="details">
+            Student at Masters Union | Loves travelling.
+          </p>
+        </motion.div>
 
-        {/* Person 6 */}
-        <div className="person-card color-6">
-          <img src={Images1} alt="Rohan" className="person-image" />
-          <h3>"Satyam Soni"</h3>
+        <motion.div
+          className="person-card color-6"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={1}
+        >
+          <img src={Images2} alt="Karthikey Pandey" className="person-image" />
+          <h3>Karthikey Pandey</h3>
+          <p className="role">Backend Developer</p>
+          <p className="details">
+            Student at UPES Dehradun | Passionate about Development | Loves coding and hackathons.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="person-card color-7"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={2}
+        >
+          <img src={Images3} alt="Satyam Soni" className="person-image" />
+          <h3>Satyam Soni</h3>
           <p className="role">Frontend Developer</p>
-          <p className="details">Student at KNIPSS | Works on Uniisphere | Aspires to be an Developer | Enjoys Gaming.</p>
-        </div>
+          <p className="details">
+            Student at KNIPSS | Works on Unisphere | Aspires to be a Developer | Enjoys Gaming.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="person-card color-8"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          custom={3}
+        >
+          <img src={Images4} alt="Priya" className="person-image" />
+          <h3>Priya</h3>
+          <p className="role">Computer Science</p>
+          <p className="details">
+            Student at Masters Union | Loves travelling.
+          </p>
+        </motion.div>
       </div>
     </div>
   );

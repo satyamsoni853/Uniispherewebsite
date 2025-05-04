@@ -4,9 +4,9 @@
   align-items: flex-end;
   width: 100%;
   margin: auto;
-  max-width: 90vw;
+  max-width: 70vw;
   padding-top: 50px;
-
+  min-height: 600px; /* Prevent layout shift during animations */
 }
 
 .uni-blog-title {
@@ -21,6 +21,9 @@
   width: 80%;
   height: 80%;
   border-radius: 10px;
+  will-change: transform, opacity; /* Optimize animation performance */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .uni-blog-content {
@@ -46,6 +49,9 @@
   width: 45%;
   font-size: 30px;
   font-weight: 300;
+  will-change: transform, opacity;
+  position: relative;
+  transform: translateZ(0);
 }
 
 .uni-blog-footer {

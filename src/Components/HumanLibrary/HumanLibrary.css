@@ -4,8 +4,9 @@
   align-items: flex-start;
   width: 100%;
   margin: auto;
-  max-width: 90vw;
+  max-width: 70vw;
   padding-top: 50px;
+  min-height: 600px; /* Prevent layout shift during animations */
 }
 
 .human-library-title {
@@ -20,6 +21,9 @@
   width: 70%;
   height: 70%;
   border-radius: 10px;
+  will-change: transform, opacity; /* Optimize animation performance */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .human-library-content {
@@ -32,7 +36,7 @@
 }
 
 .human-library-image-container {
-  background-image: url(bg.svg);
+  background-image: url(./bg.svg);
   background-size: cover;
   background-position: center;
   height: 50vh;
@@ -46,6 +50,9 @@
   width: 45%;
   font-size: 30px;
   font-weight: 300;
+  will-change: transform, opacity;
+  position: relative;
+  transform: translateZ(0);
 }
 
 .human-library-footer {

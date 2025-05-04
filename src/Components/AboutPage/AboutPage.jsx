@@ -1,10 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import './AboutPage.css';
 import Video from './Video.mp4';
 
 function AboutPage() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
+  const [isDesktopOrTablet, setIsDesktopOrTablet] = useState(true); // Default to true for safety
+  const headerRef = useRef(null);
+  const aboutRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { amount: 0.2 }); // Trigger every time 20% visible
+  const isAboutInView = useInView(aboutRef, { amount: 0.2 }); // Trigger every time 20% visible
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
@@ -13,11 +20,66 @@ function AboutPage() {
     }
   };
 
+  // Handle media query with error boundary
+  useEffect(() => {
+    try {
+      const mediaQuery = window.matchMedia("(min-width: 769px)");
+      setIsDesktopOrTablet(mediaQuery.matches);
+      const handleResize = () => setIsDesktopOrTablet(mediaQuery.matches);
+      mediaQuery.addEventListener("change", handleResize);
+      return () => mediaQuery.removeEventListener("change", handleResize);
+    } catch (error) {
+      console.error("Media query error:", error);
+      setIsDesktopOrTablet(true); // Fallback to enable animations
+    }
+  }, []);
+
+  // Debug animation conditions
+  useEffect(() => {
+    console.log("AboutPage animation conditions:", {
+      isHeaderInView,
+      isAboutInView,
+      isDesktopOrTablet,
+      shouldReduceMotion,
+    });
+  }, [isHeaderInView, isAboutInView, isDesktopOrTablet, shouldReduceMotion]);
+
+  // Animation variants for title (from left)
+  const titleVariants = {
+    hidden: { x: "-10vw", opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Animation variants for description (from right)
+  const descriptionVariants = {
+    hidden: { x: "10vw", opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="about-page">
       {/* Header Section */}
-      <div className="header">
-        <h1 className="title">
+      <div className="header" ref={headerRef}>
+        <motion.h1
+          className="title"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? titleVariants : {}}
+          initial="hidden"
+          animate={isHeaderInView ? "visible" : "hidden"}
+        >
           <span className="letter-u">U</span>
           <span className="letter-n">N</span>
           <span className="letter-i1">I</span>
@@ -28,7 +90,7 @@ function AboutPage() {
           <span className="letter-e">E</span>
           <span className="letter-r">R</span>
           <span className="letter-e2">E</span>
-        </h1>
+        </motion.h1>
         <p className="tagline">"Connect" "Collaborate" "Success"</p>
         <div className="auth-buttons">
           <button className="About-login-button">Log In</button>
@@ -37,11 +99,16 @@ function AboutPage() {
       </div>
 
       {/* About Us Section */}
-      <div className="about-section">
+      <div className="about-section" ref={aboutRef}>
         <h2>About Us ?</h2>
-        <p>
+        <motion.p
+          className="our-goal-description"
+          variants={isDesktopOrTablet && !shouldReduceMotion ? descriptionVariants : {}}
+          initial="hidden"
+          animate={isAboutInView ? "visible" : "hidden"}
+        >
           Unisphere is a student networking app designed to connect university students for academic collaboration, social networking, and career development. It offers features like secure messaging, event discovery, study groups, mentorship, freelancing opportunities, and psychological support to create a comprehensive platform for student engagement and growth.
-        </p>
+        </motion.p>
       </div>
 
       {/* Video Section */}

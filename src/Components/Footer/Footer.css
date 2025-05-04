@@ -1,10 +1,10 @@
 .footer {
-  background: linear-gradient(170.18deg, #d3d38c 7.62%, #c1d8e0 92.92%);
+  background: linear-gradient(170.18deg, #dadac1 7.62%, #8dc6c6 92.92%);
   /* opacity: 0.15; */
   padding: 20px 40px;
   display: flex;
   justify-content: center;
-  border-top: 1px solid #ddd;
+  /* border-top: 1px solid #ddd; */
 }
 
 .footer-content {
@@ -33,7 +33,7 @@
   font-weight: 700; /* Standardized font-weight */
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .footer-title span {

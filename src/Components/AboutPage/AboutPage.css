@@ -2,8 +2,8 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #fff;
   position: relative;
+  min-height: 800px; /* Prevent layout shift during animations */
 }
 
 /* Header Section */
@@ -18,53 +18,21 @@
   margin-bottom: 10px;
   display: inline-flex;
   align-items: center;
+  will-change: transform, opacity; /* Optimize animation performance */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 /* Individual letter colors and shadow */
-.letter-u {
-  color: #ff6f61;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-n {
-  color: #6b7280;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-i1 {
-  color: #34d399;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-s {
-  color: #facc15;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-p {
-  color: #3b82f6;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-h {
-  color: #ec4899;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-e {
-  color: #10b981;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-r {
-  color: #8b5cf6;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-.letter-e2 {
-  color: #f97316;
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
-}
+.letter-u { color: #ff6f61; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-n { color: #6b7280; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-i1 { color: #34d399; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-s { color: #facc15; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-p { color: #3b82f6; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-h { color: #ec4899; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-e { color: #10b981; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-r { color: #8b5cf6; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
+.letter-e2 { color: #f97316; text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6); }
 
 .tagline {
   font-size: 2.5rem;
@@ -110,9 +78,12 @@
 }
 
 .about-section p {
-  font-size: 26px;
+  font-size: 24px;
   color: #666;
   line-height: 1.5;
+  will-change: transform, opacity; /* Optimize animation performance */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 /* Video Section */
@@ -357,6 +328,10 @@
 }
 
 @media (max-width: 360px) {
+  .about-page {
+    padding: 8px;
+  }
+
   .title {
     font-size: 3rem;
     letter-spacing: 2px;

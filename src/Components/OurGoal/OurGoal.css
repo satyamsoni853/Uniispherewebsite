@@ -4,7 +4,7 @@
   text-align: left;
   max-width: 60%; /* Adjust based on your layout */
   margin: 50px auto;
-  overflow: hidden; 
+  min-height: 400px; /* Prevent layout shift during animations */
 }
 
 /* Decorative background shapes */
@@ -38,6 +38,9 @@
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  will-change: transform, opacity; /* Optimize animation performance */
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .our-goal-description {
@@ -45,4 +48,90 @@
   color: #333;
   line-height: 1.6;
   margin: 0;
+  will-change: transform, opacity;
+  position: relative;
+  transform: translateZ(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .our-goal-section {
+    padding: 30px 15px;
+    max-width: 80%;
+  }
+
+  .our-goal-title {
+    font-size: 4.5rem;
+  }
+
+  .our-goal-description {
+    font-size: 24px;
+  }
+
+  .our-goal-section::before {
+    width: 80px;
+    height: 80px;
+    left: -40px;
+  }
+
+  .our-goal-section::after {
+    width: 100px;
+    height: 100px;
+    right: -50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-goal-section {
+    padding: 20px 10px;
+    max-width: 90%;
+  }
+
+  .our-goal-title {
+    font-size: 3rem;
+  }
+
+  .our-goal-description {
+    font-size: 20px;
+  }
+
+  .our-goal-section::before {
+    width: 60px;
+    height: 60px;
+    left: -30px;
+  }
+
+  .our-goal-section::after {
+    width: 80px;
+    height: 80px;
+    right: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-goal-section {
+    padding: 15px 10px;
+    max-width: 95%;
+    margin: 30px auto;
+  }
+
+  .our-goal-title {
+    font-size: 2rem;
+  }
+
+  .our-goal-description {
+    font-size: 16px;
+  }
+
+  .our-goal-section::before {
+    width: 50px;
+    height: 50px;
+    left: -25px;
+  }
+
+  .our-goal-section::after {
+    width: 60px;
+    height: 60px;
+    right: -30px;
+  }
 }

@@ -3,6 +3,7 @@
   font-family: Arial, sans-serif;
   background-color: #fff;
   margin: 0 80px;
+  min-height: 600px; /* Prevent layout shift during animations */
 }
 
 .People-heading {
@@ -13,11 +14,10 @@
   margin-bottom: 50px;
 }
 
-
 .peoples-container {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -25,42 +25,26 @@
   justify-content: center;
 }
 
-.peoples-container.second-row .person-card {
-  width: 23%;
-}
-
 .person-card {
   border-radius: 10px;
-  padding: 20px;
-  width: 23%;
+  padding: 10px;
+  width: 22%; /* Adjusted for 4 cards to fit with 10px gap */
   text-align: center;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Shadow to right and bottom */
+  will-change: transform, opacity; /* Optimize animation performance */
+  transform: translateZ(0); /* Force hardware acceleration */
+  position: relative; /* Ensure proper stacking for animations */
 }
 
 /* Unique colors for each card */
-.color-1 {
-  background-color: #f5e7e7;
-}
-
-.color-2 {
-  background-color: #e7f5e7;
-}
-
-.color-3 {
-  background-color: #e7e7f5;
-}
-
-.color-4 {
-  background-color: #f5f5e7;
-}
-
-.color-5 {
-  background-color: #f5e7f5;
-}
-
-.color-6 {
-  background-color: #e7f5f5;
-}
+.color-1 { background-color: #f5e7e7; }
+.color-2 { background-color: #e7f5e7; }
+.color-3 { background-color: #e7e7f5; }
+.color-4 { background-color: #f5f5e7; }
+.color-5 { background-color: #f5e7f5; }
+.color-6 { background-color: #e7f5f5; }
+.color-7 { background-color: #f5f5e7; }
+.color-8 { background-color: #e7e7f5; }
 
 .person-image {
   width: 80px;
@@ -98,20 +82,15 @@
     font-size: 3.5rem;
   }
 
-  .peoples-section h2 {
-    font-size: 2.5rem;
-  }
-
   .peoples-container {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
   }
 
-  .person-card,
-  .peoples-container.second-row .person-card {
+  .person-card {
     width: 45%;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* Reduced shadow for smaller screens */
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
   }
 
   .person-image {
@@ -119,17 +98,9 @@
     height: 70px;
   }
 
-  .person-card h3 {
-    font-size: 18px;
-  }
-
-  .person-card .role {
-    font-size: 14px;
-  }
-
-  .person-card .details {
-    font-size: 13px;
-  }
+  .person-card h3 { font-size: 18px; }
+  .person-card .role { font-size: 14px; }
+  .person-card .details { font-size: 13px; }
 }
 
 @media (max-width: 768px) {
@@ -141,12 +112,7 @@
     font-size: 3rem;
   }
 
-  .peoples-section h2 {
-    font-size: 2rem;
-  }
-
-  .person-card,
-  .peoples-container.second-row .person-card {
+  .person-card {
     width: 48%;
     padding: 15px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -157,17 +123,9 @@
     height: 60px;
   }
 
-  .person-card h3 {
-    font-size: 16px;
-  }
-
-  .person-card .role {
-    font-size: 13px;
-  }
-
-  .person-card .details {
-    font-size: 12px;
-  }
+  .person-card h3 { font-size: 16px; }
+  .person-card .role { font-size: 13px; }
+  .person-card .details { font-size: 12px; }
 }
 
 @media (max-width: 480px) {
@@ -179,16 +137,11 @@
     font-size: 2.5rem;
   }
 
-  .peoples-section h2 {
-    font-size: 1.8rem;
-  }
-
   .peoples-container {
     gap: 10px;
   }
 
-  .person-card,
-  .peoples-container.second-row .person-card {
+  .person-card {
     width: 100%;
     padding: 10px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
@@ -199,15 +152,7 @@
     height: 50px;
   }
 
-  .person-card h3 {
-    font-size: 14px;
-  }
-
-  .person-card .role {
-    font-size: 12px;
-  }
-
-  .person-card .details {
-    font-size: 11px;
-  }
+  .person-card h3 { font-size: 14px; }
+  .person-card .role { font-size: 12px; }
+  .person-card .details { font-size: 11px; }
 }
