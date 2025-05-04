@@ -39,7 +39,8 @@
 }
 
 .main-connections-image-container {
-  width: 45%;
+  width: 40%;
+  margin-right: 50px;
   background-image: url(./bg.svg); /* Replace with actual bg.svg */
   background-size: cover;
   background-position: center;
@@ -105,6 +106,10 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .main-connections-image-container {
+    /* width: 40%; */
+    margin-right: 0px;
+  }
   .main-connections-container {
     padding-top: 20px;
     max-width: 95vw;
