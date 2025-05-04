@@ -2,9 +2,9 @@
   position: relative;
   padding: 40px 20px;
   text-align: left;
-  max-width: 600px; /* Adjust based on your layout */
-  margin: 0 auto;
-  overflow: hidden; /* Ensure decorative shapes don't overflow */
+  max-width: 60%; /* Adjust based on your layout */
+  margin: 50px auto;
+  overflow: hidden; 
 }
 
 /* Decorative background shapes */
@@ -33,14 +33,15 @@
 }
 
 .our-goal-title {
-  font-size: 36px;
+  font-size: 6rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .our-goal-description {
-  font-size: 16px;
+  font-size: 30px;
   color: #333;
   line-height: 1.6;
   margin: 0;

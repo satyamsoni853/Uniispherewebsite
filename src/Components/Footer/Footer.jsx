@@ -33,12 +33,15 @@ function Footer() {
           </p>
           {/* Social Media Icons */}
           <div className="social-links">
-            
-            <span className="social-icon instagram"><FaInstagram />Instagram</span>
+            <span className="social-icon instagram">
+              <FaInstagram />
+              Instagram
+            </span>
 
-            
-
-            <span className="social-icon linkedin"><FaLinkedin />LinkedIn</span>
+            <span className="social-icon linkedin">
+              <FaLinkedin />
+              LinkedIn
+            </span>
           </div>
         </div>
 

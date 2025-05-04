@@ -1,19 +1,19 @@
 .footer {
-  background-color: #eaffa5; /* Light background color */
+  background: linear-gradient(170.18deg, #d3d38c 7.62%, #c1d8e0 92.92%);
+  /* opacity: 0.15; */
   padding: 20px 40px;
   display: flex;
   justify-content: center;
-  /* width: 100%; */
-  border-top: 1px solid #ddd; /* Optional: subtle border at the top */
+  border-top: 1px solid #ddd;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  /* gap: 500px; */
-  /* width: 100%; */
   width: 80vw;
+  max-width: 1400px; /* Added max-width for better responsiveness */
+  z-index: 999;
 }
 
 .footer-left {
@@ -21,82 +21,95 @@
   flex-direction: column;
 }
 
-/* Logo Styling */
 .footer-logo {
-  width: 50px; /* Adjust based on your logo size */
+  width: 50px;
   height: auto;
-  border-radius: 60%;
-  margin-bottom: 5px; /* Reduced margin to bring logo closer to text */
+  border-radius: 50%; /* Changed to 50% for perfect circle */
+  margin-bottom: 5px;
 }
 
-/* Styling for the UNISPHERE title */
 .footer-title {
-  font-size: 24px; /* Adjust size as needed */
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 700; /* Standardized font-weight */
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  position: relative;
 }
 
-/* Individual letter styles */
-.F-letter-u,
-.F-letter-n,
-.F-letter-i1,
-.F-letter-s,
-.F-letter-p,
-.F-letter-h,
-.F-letter-e,
-.F-letter-r,
-.F-letter-e2 {
+.footer-title span {
   display: inline-block;
   font-size: 30px;
   letter-spacing: 2px;
-  color: #000; /* Default color for letters */
+  /* color: #000; */
 }
 
-/* Specific colors for letters (adjust based on your design) */
-.F-letter-u { color: #000; }
-.F-letter-n { color: #000; }
-.F-letter-i1 { color: #000; }
-.F-letter-s { color: #000; }
-.F-letter-p { color: #000; }
-.F-letter-h { color: #000; }
-.F-letter-e { color: #000; }
-.F-letter-r { color: #000; }
-.F-letter-e2 { color: #000; }
-
-/* Adding the multicolored dots above the title */
-
-
+/* Simplified letter styling by using a single class */
 .footer-tagline {
-  font-size: 26px;
+  font-size: 28px; /* Reduced font-size for better proportion */
   font-weight: 500;
   margin: 0 0 15px 0;
-  color: #333;
-  line-height: 1.5; /* Adjust line spacing for the <br /> */
+  color: black;
+  line-height: 1.5;
 }
 
+/* Unique colors for each letter based on the image */
+.F-letter-u {
+  color: #ff6f61; /* Coral red for U */
+}
+
+.F-letter-n {
+  color: #6b7280; /* Gray for N */
+}
+
+.F-letter-i1 {
+  color: #34d399; /* Teal for both I's */
+}
+
+.F-letter-s {
+  color: #facc15; /* Yellow for S */
+}
+
+.F-letter-p {
+  color: #3b82f6; /* Blue for P */
+}
+
+.F-letter-h {
+  color: #ec4899; /* Pink for H */
+}
+
+.F-letter-e {
+  color: #10b981; /* Green for first E */
+}
+
+.F-letter-r {
+  color: #8b5cf6; /* Purple for R */
+}
+
+.F-letter-e2 {
+  color: #f97316; /* Orange for second E */
+}
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px; /* Slightly reduced gap for compactness */
 }
 
 .social-icon {
-  font-size: 34px;
-
-  color: #333;
+  font-size: 30px; /* Reduced font-size for better balance */
+  color: black;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px; /* Increased gap for better spacing */
+  transition: color 0.3s ease; /* Added smooth hover transition */
 }
 
-
+.social-icon:hover {
+  color: #007bff; /* Added hover effect for interactivity */
+}
 
 .footer-right {
-  margin-top: 50px;
+  margin-top: 40px; /* Slightly reduced margin for better alignment */
   display: flex;
   justify-content: flex-end;
 }
@@ -108,16 +121,37 @@
 }
 
 .footer-links li {
-  margin-bottom: 10px;
-  font-size: 30px;
+  margin-bottom: 8px; /* Reduced margin for tighter spacing */
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #333;
-  font-size: 28px;
+  color: black;
+  font-size: 28px; /* Reduced font-size for better proportion */
+  transition: color 0.3s ease; /* Added smooth hover transition */
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  color: #007bff; /* Changed hover effect to color change */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90vw;
+  }
+
+  .footer-right {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
 }

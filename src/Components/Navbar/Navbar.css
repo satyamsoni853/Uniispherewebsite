@@ -3,13 +3,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-
+  flex-wrap: wrap;
 }
 
 .left-section {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between logo and links */
+  gap: 15px;
 }
 
 .logo-container {
@@ -18,27 +18,41 @@
 }
 
 .logo {
-  width: 80px; /* Adjust size as needed */
+  width: 90px;
   height: 80px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between links and dividers */
+  gap: 10px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #333; /* Dark text color */
+  color: #333;
   font-size: 26px;
   padding: 8px 20px;
   border-radius: 22px;
-  background-color: #f5e7e7;
 }
 
-.divider {
-  color: #ccc; /* Light gray for the divider */
+.Navbar-Human-Library {
+  background: #FFE2E2;
+  border-radius: 25px;
+}
+
+.Navbar-Guidenest {
+  background: #E5E2FF;
+  border-radius: 25px;
+}
+
+.Navbar-Blogs {
+  background: #FFE2F6;
+  border-radius: 25px;
+}
+
+.Navbar-divider {
+  color: #ccc;
   font-size: 56px;
   margin-right: 10px;
   margin-left: 10px;
@@ -47,26 +61,143 @@
 .right-section {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between buttons */
+  gap: 10px;
   margin-right: 50px;
 }
 
-.login-button {
+.Navbar-login-button {
   padding: 12px 45px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   color: #333;
   font-size: 25px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.signup-button {
+.Navbar-signup-button {
   padding: 12px 45px;
   border: none;
   font-size: 25px;
-  border-radius: 10px;
-  background-color: #000; /* Black background for Sign Up button */
-  color: #fff; /* White text */
+  border-radius: 13px;
+  background-color: #000;
+  color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    width: 70px;
+    height: 60px;
+  }
+
+  .nav-link {
+    font-size: 22px;
+    padding: 6px 15px;
+  }
+
+  .Navbar-divider {
+    font-size: 40px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  .right-section {
+    margin-right: 20px;
+    gap: 8px;
+  }
+
+  .Navbar-login-button,
+  .Navbar-signup-button {
+    padding: 10px 30px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .left-section {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 50px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  .Navbar-divider {
+    font-size: 30px;
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+
+  .right-section {
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .Navbar-login-button,
+  .Navbar-signup-button {
+    padding: 8px 25px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 40px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .Navbar-divider {
+    font-size: 20px;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+
+  .right-section {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .Navbar-login-button,
+  .Navbar-signup-button {
+    padding: 6px 20px;
+    font-size: 16px;
+  }
 }
