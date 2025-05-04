@@ -10,8 +10,9 @@ import Features from "./Components/Features/Features";
 import HumanLibrary from "./Components/HumanLibrary/HumanLibrary";
 import Blog from "./Components/Blog/Blog";
 import Connection from "./Components/Connections/Connections";
+ import EduValt from "./Components/EduValt/EduValt";
+ 
 import OurGoal from './Components/OurGoal/OurGoal'
-import Background from "./Components/Background/Background";
 
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
       <AboutPage />
       <Peoples />
       <Connection />
-      <Blog />
+ 
+      < EduValt/>
       <HumanLibrary />
-  
-
+      <Blog />
+ 
       <Collaborates />
       <OurGoal/>
       <Footer />
