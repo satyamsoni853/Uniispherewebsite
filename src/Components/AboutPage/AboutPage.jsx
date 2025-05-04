@@ -127,6 +127,8 @@ function AboutPage() {
     { char: "E", class: "letter-e2" },
   ];
 
+  const authLink = "http://uniisphere-frontend.s3-website-us-east-1.amazonaws.com/";
+
   return (
     <motion.div
       className="about-page"
@@ -164,20 +166,24 @@ function AboutPage() {
           variants={containerVariants}
           animate={isHeaderInView && !shouldReduceMotion ? "visible" : "hidden"}
         >
-          <motion.button
-            className="About-login-button"
+          <motion.a
+            href={authLink}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={buttonVariants}
             aria-label="Log In"
           >
-            Log In
-          </motion.button>
-          <motion.button
-            className="About-signup-button"
+            <button className="About-login-button">Log In</button>
+          </motion.a>
+          <motion.a
+            href={authLink}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={buttonVariants}
             aria-label="Sign Up"
           >
-            Sign Up
-          </motion.button>
+            <button className="About-signup-button">Sign Up</button>
+          </motion.a>
         </motion.div>
       </motion.div>
 
