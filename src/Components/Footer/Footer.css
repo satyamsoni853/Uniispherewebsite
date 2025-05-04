@@ -1,10 +1,9 @@
 .footer {
   background: linear-gradient(170.18deg, #dadac1 7.62%, #8dc6c6 92.92%);
-  /* opacity: 0.15; */
   padding: 20px 40px;
   display: flex;
   justify-content: center;
-  /* border-top: 1px solid #ddd; */
+  min-height: 300px;
 }
 
 .footer-content {
@@ -12,104 +11,85 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 80vw;
-  max-width: 1400px; /* Added max-width for better responsiveness */
-  z-index: 999;
+  max-width: 1400px;
 }
 
 .footer-left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-logo {
   width: 50px;
   height: auto;
-  border-radius: 50%; /* Changed to 50% for perfect circle */
-  margin-bottom: 5px;
+  border-radius: 50%;
+  margin-bottom: 8px;
 }
 
 .footer-title {
   font-size: 24px;
-  font-weight: 700; /* Standardized font-weight */
+  font-weight: 700;
   display: flex;
   align-items: center;
-  /* margin-bottom: 10px; */
+  flex-wrap: wrap;
 }
 
 .footer-title span {
-  display: inline-block;
   font-size: 30px;
   letter-spacing: 2px;
-  /* color: #000; */
+  display: inline-block;
 }
 
-/* Simplified letter styling by using a single class */
+.F-letter-u { color: #ff6f61; }
+.F-letter-n { color: #6b7280; }
+.F-letter-i1 { color: #34d399; }
+.F-letter-s { color: #facc15; }
+.F-letter-p { color: #3b82f6; }
+.F-letter-h { color: #ec4899; }
+.F-letter-e { color: #10b981; }
+.F-letter-r { color: #8b5cf6; }
+.F-letter-e2 { color: #f97316; }
+
 .footer-tagline {
-  font-size: 28px; /* Reduced font-size for better proportion */
+  font-size: 28px;
   font-weight: 500;
   margin: 0 0 15px 0;
   color: black;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-/* Unique colors for each letter based on the image */
-.F-letter-u {
-  color: #ff6f61; /* Coral red for U */
-}
-
-.F-letter-n {
-  color: #6b7280; /* Gray for N */
-}
-
-.F-letter-i1 {
-  color: #34d399; /* Teal for both I's */
-}
-
-.F-letter-s {
-  color: #facc15; /* Yellow for S */
-}
-
-.F-letter-p {
-  color: #3b82f6; /* Blue for P */
-}
-
-.F-letter-h {
-  color: #ec4899; /* Pink for H */
-}
-
-.F-letter-e {
-  color: #10b981; /* Green for first E */
-}
-
-.F-letter-r {
-  color: #8b5cf6; /* Purple for R */
-}
-
-.F-letter-e2 {
-  color: #f97316; /* Orange for second E */
-}
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Slightly reduced gap for compactness */
+  gap: 12px;
 }
 
 .social-icon {
-  font-size: 30px; /* Reduced font-size for better balance */
+  font-size: 28px;
   color: black;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px; /* Increased gap for better spacing */
-  transition: color 0.3s ease; /* Added smooth hover transition */
+  gap: 8px;
+  transition: color 0.3s ease;
+  padding: 8px;
 }
 
-.social-icon:hover {
-  color: #007bff; /* Added hover effect for interactivity */
+.social-icon.instagram:hover {
+  color: #e1306c;
+}
+
+.social-icon.linkedin:hover {
+  color: #0077b5;
+}
+
+.social-icon svg {
+  font-size: 30px;
 }
 
 .footer-right {
-  margin-top: 40px; /* Slightly reduced margin for better alignment */
+  margin-top: 40px;
   display: flex;
   justify-content: flex-end;
 }
@@ -121,27 +101,76 @@
 }
 
 .footer-links li {
-  margin-bottom: 8px; /* Reduced margin for tighter spacing */
+  margin-bottom: 10px;
 }
 
 .footer-links a {
   text-decoration: none;
   color: black;
-  font-size: 28px; /* Reduced font-size for better proportion */
-  transition: color 0.3s ease; /* Added smooth hover transition */
+  font-size: 26px;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 8px;
 }
 
 .footer-links a:hover {
-  color: #007bff; /* Changed hover effect to color change */
+  color: #0077b5;
 }
 
-/* Responsive adjustments */
+/* Tablet and smaller */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 15px 30px;
+  }
+
+  .footer-content {
+    width: 85vw;
+  }
+
+  .footer-title {
+    font-size: 20px;
+  }
+
+  .footer-title span {
+    font-size: 26px;
+  }
+
+  .footer-logo {
+    width: 45px;
+  }
+
+  .footer-tagline {
+    font-size: 24px;
+  }
+
+  .social-icon {
+    font-size: 24px;
+  }
+
+  .social-icon svg {
+    font-size: 26px;
+  }
+
+  .footer-links a {
+    font-size: 22px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .footer {
+    padding: 15px 20px;
+  }
+
   .footer-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 90vw;
+  }
+
+  .footer-left {
+    align-items: center;
   }
 
   .footer-right {
@@ -153,5 +182,81 @@
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+  }
+
+  .footer-title {
+    font-size: 18px;
+  }
+
+  .footer-title span {
+    font-size: 22px;
+  }
+
+  .footer-logo {
+    width: 40px;
+  }
+
+  .footer-tagline {
+    font-size: 20px;
+  }
+
+  .social-icon {
+    font-size: 20px;
+  }
+
+  .social-icon svg {
+    font-size: 22px;
+  }
+
+  .footer-links a {
+    font-size: 18px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 15px;
+  }
+
+  .footer-content {
+    width: 95vw;
+  }
+
+  .footer-title {
+    font-size: 16px;
+  }
+
+  .footer-title span {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .footer-logo {
+    width: 35px;
+  }
+
+  .footer-tagline {
+    font-size: 16px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-icon {
+    font-size: 18px;
+  }
+
+  .social-icon svg {
+    font-size: 20px;
+  }
+
+  .footer-links a {
+    font-size: 16px;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
   }
 }

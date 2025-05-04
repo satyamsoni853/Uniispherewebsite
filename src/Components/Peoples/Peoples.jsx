@@ -8,190 +8,175 @@ import Images4 from "./Images4.svg";
 
 function Peoples() {
   const shouldReduceMotion = useReducedMotion();
-  const [isDesktopOrTablet, setIsDesktopOrTablet] = useState(true); // Default to true for safety
+  const [isDesktop, setIsDesktop] = useState(true);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 0.2 }); // Trigger every time 20% visible
+  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
-  // Handle media query with error boundary
   useEffect(() => {
-    try {
-      const mediaQuery = window.matchMedia("(min-width: 769px)");
-      setIsDesktopOrTablet(mediaQuery.matches);
-      const handleResize = () => setIsDesktopOrTablet(mediaQuery.matches);
-      mediaQuery.addEventListener("change", handleResize);
-      return () => mediaQuery.removeEventListener("change", handleResize);
-    } catch (error) {
-      console.error("Media query error:", error);
-      setIsDesktopOrTablet(true); // Fallback to enable animations
-    }
+    const mediaQuery = window.matchMedia("(min-width: 769px)");
+    setIsDesktop(mediaQuery.matches);
+    const handleResize = () => setIsDesktop(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleResize);
+    return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
-  // Debug animation conditions
-  useEffect(() => {
-    console.log("Animation conditions:", {
-      isInView,
-      isDesktopOrTablet,
-      shouldReduceMotion,
-    });
-  }, [isInView, isDesktopOrTablet, shouldReduceMotion]);
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
 
-  // Animation variants for first row (from top)
-  const topRowVariants = {
-    hidden: { y: -50, opacity: 0 },
+  const headingVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: (index) => (index < 4 ? -30 : 30), opacity: 0 },
     visible: (index) => ({
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.5,
         ease: "easeOut",
-        delay: index * 0.2,
+        delay: (index % 4) * 0.1,
       },
     }),
   };
 
-  // Animation variants for second row (from bottom)
-  const bottomRowVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: (index) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: index * 0.2,
-      },
-    }),
-  };
+  const people = [
+    {
+      name: "Himanshu",
+      role: "Business Manager",
+      details: "Student at Masters Union | Building a Startup | Wants to be a sports person.",
+      image: Images1,
+      colorClass: "color-1",
+      alt: "Himanshu profile image",
+    },
+    {
+      name: "Tarun",
+      role: "Bachelors in UI/UX",
+      details: "Student at University of Delhi | Works at Unisphere | Previously worked in 3 different continents | Teamed up with Actress and Influencers.",
+      image: Images2,
+      colorClass: "color-2",
+      alt: "Tarun profile image",
+    },
+    {
+      name: "Khushboo",
+      role: "MBA",
+      details: "Student at UPES | Works as a Marketing Manager | Wants to be a successful Marketing Expert | Likes to travel a lot.",
+      image: Images3,
+      colorClass: "color-3",
+      alt: "Khushboo profile image",
+    },
+    {
+      name: "Abhishek",
+      role: "BTech",
+      details: "Student at GNOIT | Works at Unisphere | Wants to be a data analyst | Likes to travel.",
+      image: Images4,
+      colorClass: "color-4",
+      alt: "Abhishek profile image",
+    },
+    {
+      name: "Ansh",
+      role: "Computer Science",
+      details: "Student at Masters Union | Loves travelling.",
+      image: Images1,
+      colorClass: "color-5",
+      alt: "Ansh profile image",
+    },
+    {
+      name: "Karthikey Pandey",
+      role: "Backend Developer",
+      details: "Student at UPES Dehradun | Passionate about Development | Loves coding and hackathons.",
+      image: Images2,
+      colorClass: "color-6",
+      alt: "Karthikey Pandey profile image",
+    },
+    {
+      name: "Satyam Soni",
+      role: "Frontend Developer",
+      details: "Student at KNIPSS | Works on Unisphere | Aspires to be a Developer | Enjoys Gaming.",
+      image: Images3,
+      colorClass: "color-7",
+      alt: "Satyam Soni profile image",
+    },
+    {
+      name: "Priya",
+      role: "Computer Science",
+      details: "Student at Masters Union | Loves travelling.",
+      image: Images4,
+      colorClass: "color-8",
+      alt: "Priya profile image",
+    },
+  ];
 
   return (
-    <div className="peoples-section" ref={sectionRef}>
-      <h2 className="People-heading">People</h2>
-      {/* First Row: 4 People (from top) */}
+    <motion.div
+      className="peoples-section"
+      variants={containerVariants}
+      initial="hidden"
+      animate={isInView && !shouldReduceMotion ? "visible" : "hidden"}
+      ref={sectionRef}
+      aria-label="People Section"
+    >
+      <motion.h2 className="People-heading" variants={headingVariants}>
+        People
+      </motion.h2>
       <div className="peoples-container">
-        <motion.div
-          className="person-card color-1"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={0}
-        >
-          <img src={Images1} alt="Himanshu" className="person-image" />
-          <h3>Himanshu</h3>
-          <p className="role">Business Manager</p>
-          <p className="details">
-            Student at Masters Union | Building a Startup | Wants to be a sports person.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="person-card color-2"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={1}
-        >
-          <img src={Images2} alt="Tarun" className="person-image" />
-          <h3>Tarun</h3>
-          <p className="role">Bachelors in UI/UX</p>
-          <p className="details">
-            Student at University of Delhi | Works at Unisphere | Previously worked in 3 different continents | Teamed up with Actress and Influencers.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="person-card color-3"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={2}
-        >
-          <img src={Images3} alt="Khushboo" className="person-image" />
-          <h3>Khushboo</h3>
-          <p className="role">MBA</p>
-          <p className="details">
-            Student at UPES | Works as a Marketing Manager | Wants to be a successful Marketing Expert | Likes to travel a lot.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="person-card color-4"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? topRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={3}
-        >
-          <img src={Images4} alt="Abhishek" className="person-image" />
-          <h3>Abhishek</h3>
-          <p className="role">BTech</p>
-          <p className="details">
-            Student at GNOIT | Works at Unisphere | Wants to be a data analyst | Likes to travel.
-          </p>
-        </motion.div>
+        {people.slice(0, 4).map((person, index) => (
+          <motion.div
+            key={person.name}
+            className={`person-card ${person.colorClass}`}
+            variants={cardVariants}
+            custom={index}
+          >
+            <img
+              src={person.image}
+              alt={person.alt}
+              className="person-image"
+              aria-label={person.alt}
+            />
+            <h3>{person.name}</h3>
+            <p className="role">{person.role}</p>
+            <p className="details">{person.details}</p>
+          </motion.div>
+        ))}
       </div>
-
-      {/* Second Row: 4 People (from bottom) */}
       <div className="peoples-container second-row">
-        <motion.div
-          className="person-card color-5"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={0}
-        >
-          <img src={Images1} alt="Ansh" className="person-image" />
-          <h3>Ansh</h3>
-          <p className="role">Computer Science</p>
-          <p className="details">
-            Student at Masters Union | Loves travelling.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="person-card color-6"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={1}
-        >
-          <img src={Images2} alt="Karthikey Pandey" className="person-image" />
-          <h3>Karthikey Pandey</h3>
-          <p className="role">Backend Developer</p>
-          <p className="details">
-            Student at UPES Dehradun | Passionate about Development | Loves coding and hackathons.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="person-card color-7"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={2}
-        >
-          <img src={Images3} alt="Satyam Soni" className="person-image" />
-          <h3>Satyam Soni</h3>
-          <p className="role">Frontend Developer</p>
-          <p className="details">
-            Student at KNIPSS | Works on Unisphere | Aspires to be a Developer | Enjoys Gaming.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="person-card color-8"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? bottomRowVariants : {}}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          custom={3}
-        >
-          <img src={Images4} alt="Priya" className="person-image" />
-          <h3>Priya</h3>
-          <p className="role">Computer Science</p>
-          <p className="details">
-            Student at Masters Union | Loves travelling.
-          </p>
-        </motion.div>
+        {people.slice(4).map((person, index) => (
+          <motion.div
+            key={person.name}
+            className={`person-card ${person.colorClass}`}
+            variants={cardVariants}
+            custom={index + 4}
+          >
+            <img
+              src={person.image}
+              alt={person.alt}
+              className="person-image"
+              aria-label={person.alt}
+            />
+            <h3>{person.name}</h3>
+            <p className="role">{person.role}</p>
+            <p className="details">{person.details}</p>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

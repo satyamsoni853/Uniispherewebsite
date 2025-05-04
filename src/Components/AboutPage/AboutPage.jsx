@@ -7,11 +7,13 @@ function AboutPage() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
-  const [isDesktopOrTablet, setIsDesktopOrTablet] = useState(true); // Default to true for safety
+  const [isDesktop, setIsDesktop] = useState(true);
   const headerRef = useRef(null);
   const aboutRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { amount: 0.2 }); // Trigger every time 20% visible
-  const isAboutInView = useInView(aboutRef, { amount: 0.2 }); // Trigger every time 20% visible
+  const videoSectionRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { amount: 0.3, once: false });
+  const isAboutInView = useInView(aboutRef, { amount: 0.3, once: false });
+  const isVideoInView = useInView(videoSectionRef, { amount: 0.3, once: false });
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
@@ -20,35 +22,42 @@ function AboutPage() {
     }
   };
 
-  // Handle media query with error boundary
   useEffect(() => {
-    try {
-      const mediaQuery = window.matchMedia("(min-width: 769px)");
-      setIsDesktopOrTablet(mediaQuery.matches);
-      const handleResize = () => setIsDesktopOrTablet(mediaQuery.matches);
-      mediaQuery.addEventListener("change", handleResize);
-      return () => mediaQuery.removeEventListener("change", handleResize);
-    } catch (error) {
-      console.error("Media query error:", error);
-      setIsDesktopOrTablet(true); // Fallback to enable animations
-    }
+    const mediaQuery = window.matchMedia("(min-width: 769px)");
+    setIsDesktop(mediaQuery.matches);
+    const handleResize = () => setIsDesktop(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleResize);
+    return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
-  // Debug animation conditions
-  useEffect(() => {
-    console.log("AboutPage animation conditions:", {
-      isHeaderInView,
-      isAboutInView,
-      isDesktopOrTablet,
-      shouldReduceMotion,
-    });
-  }, [isHeaderInView, isAboutInView, isDesktopOrTablet, shouldReduceMotion]);
-
-  // Animation variants for title (from left)
-  const titleVariants = {
-    hidden: { x: "-10vw", opacity: 0 },
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
-      x: 0,
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: (i) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+        delay: i * 0.05,
+      },
+    }),
+  };
+
+  const taglineVariants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
       transition: {
         duration: 0.5,
@@ -57,9 +66,32 @@ function AboutPage() {
     },
   };
 
-  // Animation variants for description (from right)
+  const buttonVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const headingVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   const descriptionVariants = {
-    hidden: { x: "10vw", opacity: 0 },
+    hidden: { x: 20, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
@@ -69,51 +101,107 @@ function AboutPage() {
       },
     },
   };
+
+  const videoVariants = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const letters = [
+    { char: "U", class: "letter-u" },
+    { char: "N", class: "letter-n" },
+    { char: "I", class: "letter-i1" },
+    { char: "I", class: "letter-i1" },
+    { char: "S", class: "letter-s" },
+    { char: "P", class: "letter-p" },
+    { char: "H", class: "letter-h" },
+    { char: "E", class: "letter-e" },
+    { char: "R", class: "letter-r" },
+    { char: "E", class: "letter-e2" },
+  ];
 
   return (
-    <div className="about-page">
+    <motion.div
+      className="about-page"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      aria-label="About Page"
+    >
       {/* Header Section */}
-      <div className="header" ref={headerRef}>
+      <motion.div className="header" ref={headerRef} variants={containerVariants}>
         <motion.h1
           className="title"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? titleVariants : {}}
-          initial="hidden"
-          animate={isHeaderInView ? "visible" : "hidden"}
+          animate={isHeaderInView && !shouldReduceMotion ? "visible" : "hidden"}
         >
-          <span className="letter-u">U</span>
-          <span className="letter-n">N</span>
-          <span className="letter-i1">I</span>
-          <span className="letter-i1">I</span>
-          <span className="letter-s">S</span>
-          <span className="letter-p">P</span>
-          <span className="letter-h">H</span>
-          <span className="letter-e">E</span>
-          <span className="letter-r">R</span>
-          <span className="letter-e2">E</span>
+          {letters.map((letter, i) => (
+            <motion.span
+              key={i}
+              className={letter.class}
+              variants={letterVariants}
+              custom={i}
+            >
+              {letter.char}
+            </motion.span>
+          ))}
         </motion.h1>
-        <p className="tagline">"Connect" "Collaborate" "Success"</p>
-        <div className="auth-buttons">
-          <button className="About-login-button">Log In</button>
-          <button className="About-signup-button">Sign Up</button>
-        </div>
-      </div>
+        <motion.p
+          className="tagline"
+          variants={taglineVariants}
+          animate={isHeaderInView && !shouldReduceMotion ? "visible" : "hidden"}
+        >
+          "Connect" "Collaborate" "Success"
+        </motion.p>
+        <motion.div
+          className="auth-buttons"
+          variants={containerVariants}
+          animate={isHeaderInView && !shouldReduceMotion ? "visible" : "hidden"}
+        >
+          <motion.button
+            className="About-login-button"
+            variants={buttonVariants}
+            aria-label="Log In"
+          >
+            Log In
+          </motion.button>
+          <motion.button
+            className="About-signup-button"
+            variants={buttonVariants}
+            aria-label="Sign Up"
+          >
+            Sign Up
+          </motion.button>
+        </motion.div>
+      </motion.div>
 
       {/* About Us Section */}
-      <div className="about-section" ref={aboutRef}>
-        <h2>About Us ?</h2>
-        <motion.p
-          className="our-goal-description"
-          variants={isDesktopOrTablet && !shouldReduceMotion ? descriptionVariants : {}}
-          initial="hidden"
-          animate={isAboutInView ? "visible" : "hidden"}
-        >
+      <motion.div
+        className="about-section"
+        ref={aboutRef}
+        variants={containerVariants}
+        animate={isAboutInView && !shouldReduceMotion ? "visible" : "hidden"}
+      >
+        <motion.h2 variants={headingVariants}>About Us?</motion.h2>
+        <motion.p className="our-goal-description" variants={descriptionVariants}>
           Unisphere is a student networking app designed to connect university students for academic collaboration, social networking, and career development. It offers features like secure messaging, event discovery, study groups, mentorship, freelancing opportunities, and psychological support to create a comprehensive platform for student engagement and growth.
         </motion.p>
-      </div>
+      </motion.div>
 
       {/* Video Section */}
-      <div className="video-section">
-        <div className="video-container">
+      <motion.div
+        className="video-section"
+        ref={videoSectionRef}
+        variants={containerVariants}
+        animate={isVideoInView && !shouldReduceMotion ? "visible" : "hidden"}
+      >
+        <motion.div className="video-container" variants={videoVariants}>
           <video
             className="centered-video"
             autoPlay
@@ -121,6 +209,7 @@ function AboutPage() {
             muted={isMuted}
             ref={videoRef}
             playsInline
+            aria-label="Unisphere promotional video"
           >
             <source src={Video} type="video/mp4" />
             Your browser does not support the video tag.
@@ -129,11 +218,12 @@ function AboutPage() {
             <button
               onClick={toggleMute}
               className={`mute-button ${isMuted ? 'muted' : ''}`}
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
             ></button>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
 

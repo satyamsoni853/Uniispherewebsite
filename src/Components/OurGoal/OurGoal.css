@@ -2,9 +2,9 @@
   position: relative;
   padding: 40px 20px;
   text-align: left;
-  max-width: 60%; /* Adjust based on your layout */
+  max-width: 60%;
   margin: 50px auto;
-  min-height: 400px; /* Prevent layout shift during animations */
+  min-height: 300px;
 }
 
 /* Decorative background shapes */
@@ -13,13 +13,14 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  opacity: 0.2; /* Adjust opacity for a subtle effect */
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .our-goal-section::before {
   width: 100px;
   height: 100px;
-  background-color: #f5e6cc; /* Light beige color for the left shape */
+  background-color: #f5e6cc;
   top: 10px;
   left: -50px;
 }
@@ -27,33 +28,27 @@
 .our-goal-section::after {
   width: 120px;
   height: 120px;
-  background-color: #d6eaff; /* Light blue color for the right shape */
+  background-color: #d6eaff;
   bottom: 10px;
   right: -60px;
 }
 
 .our-goal-title {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
   text-align: center;
-  will-change: transform, opacity; /* Optimize animation performance */
-  position: relative;
-  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .our-goal-description {
-  font-size: 30px;
+  font-size: 28px;
   color: #333;
   line-height: 1.6;
   margin: 0;
-  will-change: transform, opacity;
-  position: relative;
-  transform: translateZ(0);
 }
 
-/* Responsive adjustments */
+/* Tablet */
 @media (max-width: 1024px) {
   .our-goal-section {
     padding: 30px 15px;
@@ -61,7 +56,7 @@
   }
 
   .our-goal-title {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   .our-goal-description {
@@ -81,18 +76,19 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .our-goal-section {
-    padding: 20px 10px;
+    padding: 20px 15px;
     max-width: 90%;
   }
 
   .our-goal-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .our-goal-description {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .our-goal-section::before {
@@ -108,30 +104,34 @@
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   .our-goal-section {
     padding: 15px 10px;
     max-width: 95%;
-    margin: 30px auto;
+    margin: 20px auto;
   }
 
   .our-goal-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .our-goal-description {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .our-goal-section::before {
-    width: 50px;
-    height: 50px;
-    left: -25px;
+    width: 40px;
+    height: 40px;
+    left: -20px;
+    top: 20px;
   }
 
   .our-goal-section::after {
-    width: 60px;
-    height: 60px;
-    right: -30px;
+    width: 50px;
+    height: 50px;
+    right: -25px;
+    bottom: 20px;
   }
 }

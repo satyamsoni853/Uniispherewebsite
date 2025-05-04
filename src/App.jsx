@@ -11,8 +11,9 @@ import HumanLibrary from "./Components/HumanLibrary/HumanLibrary";
 import Blog from "./Components/Blog/Blog";
 import Connection from "./Components/Connections/Connections";
  import EduValt from "./Components/EduValt/EduValt";
- 
+ import Background from './Components/Background/Background'
 import OurGoal from './Components/OurGoal/OurGoal'
+
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
  
       <Collaborates />
       <OurGoal/>
+      <Features/>
       <Footer />
     </BrowserRouter>
   );
