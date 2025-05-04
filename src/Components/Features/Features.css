@@ -1,65 +1,80 @@
 .features-section {
-  padding: 40px 20px;
-  text-align: left; /* Align text to the left */
-  background-color: #f5f5f5; /* Light background to match the design */
+  padding: 50px 0;
+  text-align: left;
+  background-color: #ffffff;
 }
 
+/* Base styles for desktop */
 .features-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  font-size: 50px;
+  font-weight: 700;
+  color: #000000;
   margin-bottom: 20px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50px;
 }
 
 .slider-container {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
   overflow: hidden;
 }
 
 .slide {
+  height: 300px;
   width: 100%;
   display: flex;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: flex-start;
 }
 
 .slide-content {
   display: flex;
-  height: 200px;
+  gap: 20px;
+  height: 100%;
   align-items: center;
   width: 100%;
   padding: 20px;
-  background-color: #fff; /* White background for each slide */
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slide-image-container {
+  width: 40%;
+  height: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image-bg-image {
+  width: 100%;
+  height: 300px;
 }
 
 .feature-icon {
-  width: 60px; /* Adjust based on your icon size */
-  height: 60px;
-  margin-right: 20px; /* Space between icon and text */
+  width: 170px;
+  height: 170px;
+  position: absolute;
 }
 
 .slide-text {
+  width: 200px;
+  margin-right: 60px;
   flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .slide-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
+  font-size: 60px;
+  font-weight: 700;
+  color: #696868;
   margin: 0 0 10px 0;
 }
 
 .slide-description {
-  font-size: 16px;
-  color: #666;
+  font-size: 30px;
+  color: #000000;
   margin: 0;
+  text-align: center;
 }
 
 .slider-arrow {
@@ -86,4 +101,123 @@
 
 .slider-arrow:hover {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Tablet view (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .features-section {
+    padding: 30px 0;
+  }
+
+  .features-title {
+    font-size: 36px;
+    margin-left: 20px;
+    max-width: 90%;
+  }
+
+  .slide {
+    height: 250px;
+  }
+
+  .slide-content {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .slide-image-container {
+    width: 50%;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .slide-image-bg-image {
+    height: 150px;
+  }
+
+  .feature-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .slide-text {
+    width: 150px;
+    margin-right: 20px;
+  }
+
+  .slide-title {
+    font-size: 40px;
+  }
+
+  .slide-description {
+    font-size: 20px;
+  }
+
+  .slider-arrow {
+    padding: 8px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile view (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .features-section {
+    padding: 20px 0;
+  }
+
+  .features-title {
+    font-size: 28px;
+    margin-left: 15px;
+    max-width: 95%;
+  }
+
+  .slide {
+    height: 200px;
+  }
+
+  .slide-content {
+    gap: 10px;
+    padding: 10px;
+  }
+ 
+  .slide-image-container {
+    width: 60%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .slide-image-bg-image {
+    height: 120px;
+  }
+
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .slide-text {
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .slide-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  .slide-description {
+    font-size: 16px;
+  }
+
+  .slider-arrow {
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  .left-arrow {
+    left: 5px;
+  }
+
+  .right-arrow {
+    right: 5px;
+  }
 }
