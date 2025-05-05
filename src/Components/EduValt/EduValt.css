@@ -37,8 +37,9 @@
 }
 
 .EduValt-image-container {
-  width: 45%;
+  width: 40%;
   background-image: url(./bg.svg);
+  background-repeat: no-repeat;
   display: flex;
   height: 60vh;
   justify-content: center;
