@@ -13,12 +13,20 @@ import Connection from "./Components/Connections/Connections";
  import EduValt from "./Components/EduValt/EduValt";
  import Background from './Components/Background/Background'
 import OurGoal from './Components/OurGoal/OurGoal'
+import TermsAndCondition from "./Components/TermsAndCondition/TermsAndCondition";
+import CookiesPolicy from "./Components/CookiesPolicy/CookiesPolicy";
+import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 
 
 function App() {
   return (
     <BrowserRouter>
     <Background/>
+      <Routes>
+        <Route path="/Termsandconditons" element={<TermsAndCondition/>}/>
+        <Route path="/CookiePolicy" element={<CookiesPolicy/>}/>
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>}/>
+    </Routes>
       <Navbar />
       <AboutPage />
       <Peoples />
