@@ -18,9 +18,14 @@
 }
 
 .terms-and-conditions-logo {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
     object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .terms-and-condition-cross {
