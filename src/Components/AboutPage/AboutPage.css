@@ -21,15 +21,15 @@
 }
 
 /* Individual letter colors and shadow */
-.letter-u { color: #ff6f61; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-n { color: #6b7280; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-i1 { color: #34d399; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-s { color: #facc15; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-p { color: #3b82f6; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-h { color: #ec4899; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-e { color: #10b981; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-r { color: #8b5cf6; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
-.letter-e2 { color: #f97316; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-u { color: #DA3E39; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-n { color: #38A3AC; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-i1 { color: #DFC462; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-s { color: #889095; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-p { color: #E9877A; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-h { color: #A7829D; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-e { color: #E9877A; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-r { color: #38A3AC; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
+.letter-e2 { color: #DA3E39; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); }
 
 .tagline {
   font-size: 2.2rem;
