@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import Unispherelogo from './Unispherelogo.png';
 
@@ -100,7 +101,7 @@ function Footer() {
         {/* Left Section */}
         <motion.div className="footer-left">
           <motion.img
-            src={Unispherelogo} // Replace with actual Unispherelogo.png
+            src={Unispherelogo}
             alt="Unisphere Logo"
             className="footer-logo"
             variants={logoVariants}
@@ -153,14 +154,14 @@ function Footer() {
         <motion.div className="footer-right">
           <ul className="footer-links">
             {[
-              { href: "/about", text: "About" },
-              { href: "/privacy-policy", text: "Privacy Policy" },
-              { href: "/cookie-policy", text: "Cookie Policy" },
-              { href: "/user-agreement", text: "User Agreement" },
-              { href: "/community-guidelines", text: "Community Guidelines" },
+              { to: "/about", text: "About" },
+              { to: "/privacy-policy", text: "Privacy Policy" },
+              { to: "/cookie-policy", text: "Cookie Policy" },
+              { to: "/user-agreement", text: "User Agreement" },
+              { to: "/community-guidelines", text: "Community Guidelines" },
             ].map((link, i) => (
-              <motion.li key={link.href} variants={linkVariants} custom={i}>
-                <a href={link.href}>{link.text}</a>
+              <motion.li key={link.to} variants={linkVariants} custom={i}>
+                <Link to={link.to}>{link.text}</Link>
               </motion.li>
             ))}
           </ul>

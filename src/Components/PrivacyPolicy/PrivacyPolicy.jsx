@@ -1,27 +1,111 @@
-import React from 'react'
+import React from 'react';
 import { RxCross2 } from "react-icons/rx";
 import Logo from "./Unispherelogo.png";
 import "./PrivacyPolicy.css";
 
-
-
 const PrivacyPolicy = () => {
   return (
-      <div className="privacy-policy-main-container">
-          <div className="privacy-policy-logo-and-cancel">
-            <img className="privacy-policy-logo" src={Logo} alt="Logo" />
-            <RxCross2 className="privacy-policy-cross" />
-          </div>
-          <div className="terms-and-conditons-main-container">
-            <h1 className="terms-and-conditons-heading">Privacy Policy</h1>
-          </div>
-          <div className="privacy-policy-text-container">
-            <p className="privacy-policy-text">
-        Welcome to Uniisphere — a digital space where college students connect, collaborate, and grow. Your trust means everything to us. This Privacy Policy outlines what information we collect, how we use it, and the choices you have. 1. What Data We Collect 1.1 Information You Provide:  When you sign up or use our features, we may ask for: Name Email address or college credentials City or region Password Any info you share in posts, resumes, applications, or forms Sharing additional details (like skills, interests, or academic info) is optional but helps enhance your experience. 1.2 Content from Others:  Other users may share content that includes you (e.g., tagged posts, mentions, or group interactions). 1.3 Usage Data:  We collect data when you interact with the app — like viewing content, searching, messaging, or attending events. We use cookies, session logs, and device IDs to understand activity and ensure app security. 1.4 Location Data:  If allowed, we may use device signals (like GPS or IP) to estimate your location and personalize content or features. You can turn this off anytime in settings. 1.5 Communications:  We log messaging activity (sender, receiver, timestamp), but not the content of private chats unless flagged for moderation. 1.6 Evolving Data:  As Uniisphere grows, new tools may require new types of data. If anything major changes, we’ll let you know clearly. 2. How We Use Your Data 2.1 Core Functionality:  We use your data to: Verify your student status Help you find classmates, opportunities, and content Suggest connections, skills, or internships Recommend learning resources based on your interests Personalize your feed with posts, events, or insights 2.2 Communications:  We’ll message you about app activity, account security, suggestions, and updates via email, in-app notifications, or text (based on your preferences). 2.3 Marketing & Growth:  We may use anonymized data to promote Uniisphere or show how users engage with features (e.g., "John from XYZ University just joined..."). 2.4 Research & Insights:  We analyze trends to improve the app and may partner with trusted researchers — always ensuring your data is protected and anonymized. 3. Your Rights & Choices You can view and update your info anytime You can opt out of certain communications Deactivation is allowed, but full deletion may be delayed for up to 5 years for legal and platform integrity reasons 4. Security & Data Retention We use secure systems to store your data, including encryption and limited access. While no system is perfect, we constantly monitor and improve security. 5. Contact Us Have questions? We’re here to help. Email: uniisphere2024@gmail.com 
-            </p>
-          </div>
-        </div>
-  )
-}
+    <div className="user-agreement-main-container">
+      <div className="user-agreement-logo-and-cancel">
+        <img className="user-agreement-logo" src={Logo} alt="Logo" />
+        <RxCross2 className="user-agreement-cross" />
+      </div>
+      <div className="terms-and-conditions-main-container">
+        <h1 className="terms-and-conditions-heading">User Agreement</h1>
+      </div>
+      <div className="user-agreement-text-container">
+        <p className="user-agreement-text">
+          Uniisphere User Agreement
+          <br />
+          Effective Date: April 5, 2025
+          <br />
+          Welcome to Uniisphere — a social learning platform exclusively built for college students. This User Agreement (“Agreement”) outlines your rights, responsibilities, and relationship with Uniisphere. By using our services, you agree to this Agreement in full.
+          <br /><br />
+          <strong>1. Eligibility</strong>
+          <br />
+          You may only use Uniisphere if you are:
+          <ul>
+            <li>A current student enrolled at a recognized educational institution</li>
+            <li>Able to verify your identity through a college-issued email or other accepted method</li>
+            <li>At least 18 years old or of legal age in your jurisdiction</li>
+          </ul>
+          <br />
+          <strong>2. Your Responsibilities</strong>
+          <br />
+          By using Uniisphere, you agree to:
+          <ul>
+            <li>Provide accurate, truthful information during signup and usage</li>
+            <li>Treat others with respect and dignity, both in public and private features</li>
+            <li>Follow all applicable laws, university codes, and this Agreement</li>
+            <li>Use the app solely for non-commercial, student-focused purposes</li>
+          </ul>
+          You may not:
+          <ul>
+            <li>Impersonate other individuals or submit false verification documents</li>
+            <li>Harass, threaten, or abuse other users</li>
+            <li>Upload illegal, harmful, or copyrighted content</li>
+            <li>Attempt to reverse-engineer, hack, or interfere with the platform’s services</li>
+          </ul>
+          <br />
+          <strong>3. Content Ownership & Use</strong>
+          <br />
+          <ul>
+            <li>You own the content you create (e.g. messages, posts, reviews), but by uploading it to Uniisphere, you grant us a non-exclusive, royalty-free, worldwide license to use, display, and moderate it within the app.</li>
+            <li>We do not sell your personal content to third parties.</li>
+            <li>Uniisphere reserves the right to remove or moderate content that violates this Agreement.</li>
+          </ul>
+          <br />
+          <strong>4. Feature Usage</strong>
+          <br />
+          Uniisphere includes features like:
+          <ul>
+            <li>Human Library: A student-only anonymous chat space</li>
+            <li>NGO Internships: A discovery and application tool for verified students</li>
+            <li>E-Books: Reading, reviewing, and sharing academic or leisure titles</li>
+            <li>Mentorship: Connecting students with senior peers for guidance</li>
+          </ul>
+          Each feature has additional rules outlined in our Terms & Conditions, which you also agree to by using Uniisphere.
+          <br /><br />
+          <strong>5. Data Collection & Privacy</strong>
+          <br />
+          <ul>
+            <li>We collect necessary data to operate the app safely and efficiently, as described in our Privacy Policy</li>
+            <li>Your    Your data is never sold, and third-party sharing is minimal and consent-based</li>
+            <li>You can request data deletion or account termination by contacting support</li>
+          </ul>
+          <br />
+          <strong>6. Suspension or Termination</strong>
+          <br />
+          We reserve the right to suspend, restrict, or terminate accounts that:
+          <ul>
+            <li>Violate this Agreement or any of our policies</li>
+            <li>Harm other users or the platform</li>
+            <li>Engage in fraudulent or manipulative behavior</li>
+          </ul>
+          <br />
+          <strong>7. Limitation of Liability</strong>
+          <br />
+          Uniisphere is a student-oriented platform that facilitates connections and opportunities. We do not guarantee:
+          <ul>
+            <li>Matches or responses in mentorship or chat features</li>
+            <li>Internship placements or experiences</li>
+            <li>Complete accuracy of user-submitted content</li>
+          </ul>
+          Use Uniisphere at your own discretion and risk.
+          <br /><br />
+          <strong>8. Agreement Changes</strong>
+          <br />
+          We may update this Agreement periodically. Continued use of Uniisphere after changes constitutes your acceptance of the new terms.
+          <br /><br />
+          <strong>9. Contact</strong>
+          <br />
+          For questions, support, or disputes, reach out to us at:
+          <br />
+          📧 support@uniisphere.app
+        </p>
+      </div>
+    </div>
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;

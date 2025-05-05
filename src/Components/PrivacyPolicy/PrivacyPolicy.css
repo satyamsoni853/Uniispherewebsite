@@ -1,40 +1,118 @@
-.privacy-policy-main-container {
+.user-agreement-main-container {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .privacy-policy-logo-and-cancel {
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.user-agreement-logo-and-cancel {
     width: 100%;
+    max-width: 1200px;
     display: flex;
-  
     justify-content: space-between;
     align-items: center;
-  }
-  .privacy-policy-logo{
-      height: 70px;
-      object-fit: cover;
-      width: 70px;
-  }
-  .privacy-policy-cross{
-      font-size: 30px;
-      cursor: pointer;
-  }
-  .terms-and-conditons-heading{
-      font-size: 70px;
-      font-weight: 700;
-  }
-  .privacy-policy-text-container{
-      width: 80%;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-  .privacy-policy-text{
-      font-size: 24px;
-      line-height: 1.4;
-      letter-spacing: 2px;
-      text-align: justify;
-  }
+    padding: 0 1rem;
+}
+
+.user-agreement-logo {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+}
+
+.user-agreement-cross {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.user-agreement-cross:hover {
+    color: #555;
+}
+
+.terms-and-conditions-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.user-agreement-text-container {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-agreement-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.05rem;
+    text-align: justify;
+}
+
+/* Tablet screens (≤768px) */
+@media (max-width: 768px) {
+    .user-agreement-main-container {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .user-agreement-logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .user-agreement-cross {
+        font-size: 1.5rem;
+    }
+
+    .terms-and-conditions-heading {
+        font-size: 2.5rem;
+    }
+
+    .user-agreement-text-container {
+        width: 90%;
+    }
+
+    .user-agreement-text {
+        font-size: 1rem;
+        letter-spacing: 0.03rem;
+    }
+}
+
+/* Mobile screens (≤480px) */
+@media (max-width: 480px) {
+    .user-agreement-main-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .user-agreement-logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .user-agreement-cross {
+        font-size: 1.2rem;
+    }
+
+    .terms-and-conditions-heading {
+        font-size: 1.8rem;
+    }
+
+    .user-agreement-text-container {
+        width: 95%;
+        margin-top: 1rem;
+    }
+
+    .user-agreement-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        letter-spacing: 0.02rem;
+        text-align: left; /* Left-aligned for better mobile readability */
+    }
+}
