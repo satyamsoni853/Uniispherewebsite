@@ -4,37 +4,115 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .cookies-policy-logo-and-cancel {
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.cookies-policy-logo-and-cancel {
     width: 100%;
+    max-width: 1200px;
     display: flex;
-  
     justify-content: space-between;
     align-items: center;
-  }
-  .cookies-policy-logo{
-      height: 70px;
-      object-fit: cover;
-      width: 70px;
-  }
-  .cookies-policy-cross{
-      font-size: 30px;
-      cursor: pointer;
-  }
-  .terms-and-conditons-heading{
-      font-size: 70px;
-      font-weight: 700;
-  }
-  .cookies-policy-text-container{
-      width: 80%;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-  .cookies-policy-text{
-      font-size: 24px;
-      line-height: 1.4;
-      letter-spacing: 2px;
-      text-align: justify;
-  }
+    padding: 0 1rem;
+}
+
+.cookies-policy-logo {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+}
+
+.cookies-policy-cross {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cookies-policy-cross:hover {
+    color: #555;
+}
+
+.terms-and-conditons-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.cookies-policy-text-container {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cookies-policy-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.05rem;
+    text-align: justify;
+}
+
+/* Tablet screens (≤768px) */
+@media (max-width: 768px) {
+    .cookies-policy-main-container {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .cookies-policy-logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .cookies-policy-cross {
+        font-size: 1.5rem;
+    }
+
+    .terms-and-conditons-heading {
+        font-size: 2.5rem;
+    }
+
+    .cookies-policy-text-container {
+        width: 90%;
+    }
+
+    .cookies-policy-text {
+        font-size: 1rem;
+        letter-spacing: 0.03rem;
+    }
+}
+
+/* Mobile screens (≤480px) */
+@media (max-width: 480px) {
+    .cookies-policy-main-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .cookies-policy-logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .cookies-policy-cross {
+        font-size: 1.2rem;
+    }
+
+    .terms-and-conditons-heading {
+        font-size: 1.8rem;
+    }
+
+    .cookies-policy-text-container {
+        width: 95%;
+        margin-top: 1rem;
+    }
+
+    .cookies-policy-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        letter-spacing: 0.02rem;
+        text-align: left; /* Left-aligned for better mobile readability */
+    }
+}
