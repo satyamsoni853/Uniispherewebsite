@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import './AboutPage.css';
-import Video from './Video.mp4';
+import Video from './video.mp4';
 
 function AboutPage() {
   const [isMuted, setIsMuted] = useState(true);

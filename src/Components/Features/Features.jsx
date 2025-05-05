@@ -12,7 +12,7 @@ import Event from './Event.svg';
 import Freelancing from './Freelancing.svg';
 import Guide from './Guide.svg';
 import Ngo from './Ngo.svg';
-import Skill from './Skill.png'; // Note: This is a PNG, not an SVG
+import Skill from './skill.png'; // Note: This is a PNG, not an SVG
 
 function Features() {
   // Array of slides with their content and corresponding icons
@@ -22,14 +22,14 @@ function Features() {
       description: "Empowering Communities Today for a Stronger Tomorrow",
       icon: Ngo, // Use the imported Ngo.svg
       BG: NGObg, // Use the imported Ngobg.svg
-      bgColor:"#FFE5E5"
+      bgColor: "#FFE5E5"
     },
     {
       title: "GUIDENEST",
       description: "A Journey of Learning, Led by Those Who’ve Been There",
       icon: Guide, // Use the imported Guide.svg
       BG: Guidenestbg, // Use the imported Guidenestbg.svg
-      bgColor:"#EDE8E9"
+      bgColor: "#EDE8E9"
 
     },
     {
@@ -37,21 +37,21 @@ function Features() {
       description: "Work, Earn, Grow – ALL While Staying in Your Zone",
       icon: Freelancing, // Use the imported Freelancing.svg
       BG: Freelancingbg, // Use the imported Freelancingbg.svg
-      bgColor:"#FFEFE2"
+      bgColor: "#FFEFE2"
     },
     {
       title: "SKILL-UP",
       description: "Learn, Improve, and Evolve – One Step at a Time",
       icon: Skill, // Use the imported Skill.png
       BG: Skillbg, // Use the imported Skillbg.svg
-      bgColor:"#F8ECDD"
+      bgColor: "#F8ECDD"
     },
     {
       title: "EVENTS",
       description: "Explore and Join Events Happening in Colleges",
       icon: Event, // Use the imported Event.svg
       BG: Eventbg, // Use the imported Eventbg.svg
-      bgColor:"#e7feeb"
+      bgColor: "#e7feeb"
     },
   ];
 
@@ -68,33 +68,33 @@ function Features() {
   };
 
 
-   
+
 
   return (
     <div className="features-section">
       <h2 className="features-title">Upcomming Features</h2>
       <div className="slider-container">
         {/* Left Arrow */}
-        
+
 
         {/* Slide Content */}
         <div className="slide">
           <div
-          style={{
-            backgroundColor:slides[currentSlide].bgColor
-          }}
-          className="slide-content">
+            style={{
+              backgroundColor: slides[currentSlide].bgColor
+            }}
+            className="slide-content">
             {/* Feature Icon */}
-            <div 
-            
-            className="slide-image-container">
+            <div
+
+              className="slide-image-container">
               <img className='slide-image-bg-image' src={slides[currentSlide].BG} alt="" />
-            <img
-           
-              src={slides[currentSlide].icon}
-              alt={slides[currentSlide].title}
-              className="feature-icon"
-            />
+              <img
+
+                src={slides[currentSlide].icon}
+                alt={slides[currentSlide].title}
+                className="feature-icon"
+              />
             </div>
             {/* Text Content */}
             <div className="slide-text">
