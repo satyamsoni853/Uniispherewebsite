@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
     <div className="user-agreement-main-container">
       <div className="user-agreement-logo-and-cancel">
         <img className="user-agreement-logo" src={Logo} alt="Logo" />
-        <RxCross2 className="user-agreement-cross" />
+        {/* <RxCross2 className="user-agreement-cross" /> */}
       </div>
       <div className="terms-and-conditions-main-container">
         <h1 className="terms-and-conditions-heading">User Agreement</h1>

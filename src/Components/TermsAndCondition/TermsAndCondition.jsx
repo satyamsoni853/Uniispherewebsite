@@ -10,7 +10,7 @@ const TermsAndCondition = () => {
       <Background/>
       <div className="terms-and-conditions-logo-and-cancel">
         <img className="terms-and-conditions-logo" src={Logo} alt="Logo" />
-        <RxCross2 className="terms-and-condition-cross" />
+        {/* <RxCross2 className="terms-and-condition-cross" /> */}
       </div>
       <div className="terms-and-conditons-main-container">
         <h1 className="terms-and-conditons-heading">Terms & Conditions</h1>

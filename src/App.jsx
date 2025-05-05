@@ -19,12 +19,13 @@ function App() {
   return (
     <BrowserRouter>
       <Background />
-      <Navbar />
+      
       <Routes>
         <Route
           path="/"
           element={
             <>
+            <Navbar />
               <AboutPage />
               <Peoples />
               <Connection />
@@ -37,9 +38,9 @@ function App() {
             </>
           }
         />
-        <Route path="/terms" element={<TermsAndCondition />} />
-        <Route path="/cookies" element={<CookiesPolicy />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+         <Route path="/user-agreement" element={<TermsAndCondition />} />
+        <Route path="/cookie-policy" element={<CookiesPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} /> 
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
       <Footer />

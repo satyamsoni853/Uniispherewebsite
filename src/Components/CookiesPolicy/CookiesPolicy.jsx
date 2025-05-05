@@ -10,7 +10,7 @@ const CookiesPolicy = () => {
       <Background/>
       <div className="cookies-policy-logo-and-cancel">
         <img className="cookies-policy-logo" src={Logo} alt="Logo" />
-        <RxCross2 className="cookies-policy-cross" />
+        {/* <RxCross2 className="cookies-policy-cross" /> */}
       </div>
       <div className="terms-and-conditons-main-container">
         <h1 className="terms-and-conditons-heading">Cookie Policy</h1>
