@@ -113,7 +113,7 @@
   .main-connections-container {
     padding-top: 20px;
     max-width: 95vw;
-    align-items: center;
+    align-items: start;
   }
 
   .main-connections-header {
@@ -122,12 +122,12 @@
 
   .main-connections-title {
     font-size: 50px;
-    text-align: center;
+    text-align: start;
   }
 
   .main-connections-content {
-    flex-direction: column;
-    align-items: center;
+   gap: 10px;
+    align-items: start;
     padding: 5px;
   }
 
@@ -146,11 +146,12 @@
   .main-connections-text {
     font-size: 18px;
     margin-top: 10px;
+    text-align: justify;
   }
 
   .main-connections-footer {
     font-size: 24px;
-    width: 80%;
+    width: 70%;
     margin-bottom: 40px;
   }
 }

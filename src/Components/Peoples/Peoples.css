@@ -104,7 +104,9 @@
   .peoples-section {
     margin: 0 20px;
   }
-
+.peoples-container{
+  column-gap: 20px;
+}
   .People-heading {
     font-size: 3rem;
   }

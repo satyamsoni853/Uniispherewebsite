@@ -103,17 +103,17 @@
   .uni-blog-container {
     padding-top: 20px;
     max-width: 95vw;
-    align-items: center;
+    align-items: end;
   }
 
   .uni-blog-title {
-    margin-right: 0;
+    margin-right: 40px;
     font-size: 50px;
-    text-align: center;
+    text-align: end;
   }
 
   .uni-blog-content {
-    flex-direction: column;
+   gap: 10px;
     align-items: center;
     padding: 5px;
   }
@@ -121,7 +121,7 @@
   .uni-blog-image-container,
   .uni-blog-text {
     width: 100%;
-    text-align: center;
+    text-align: justify;
   }
 
   .uni-blog-image-container {
@@ -132,6 +132,7 @@
   .uni-blog-image {
     width: 90%;
     height: 60%;
+    margin-bottom: 20px;
   }
 
   .uni-blog-text {
@@ -140,8 +141,9 @@
 
   .uni-blog-footer {
     font-size: 24px;
-    width: 80%;
-    text-align: center;
+    width: 60%;
+    align-self: flex-end;
+    text-align: end;
     margin-bottom: 40px;
   }
 }

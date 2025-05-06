@@ -14,19 +14,18 @@ import Background from "./Components/Background/Background";
 import OurGoal from "./Components/OurGoal/OurGoal";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsAndCondition from "./Components/TermsAndCondition/TermsAndCondition";
-import CookiesPolicy from './Components/CookiesPolicy/CookiesPolicy'
-import ComingSoon from "./Components/ComingSoon/ComingSoon";
+import CookiesPolicy from "./Components/CookiesPolicy/CookiesPolicy";
+
 function App() {
   return (
     <BrowserRouter>
       <Background />
-      
       <Routes>
         <Route
           path="/"
           element={
             <>
-            <Navbar />
+              <Navbar />
               <AboutPage />
               <Peoples />
               <Connection />
@@ -39,10 +38,10 @@ function App() {
             </>
           }
         />
-         <Route path="/user-agreement" element={<TermsAndCondition />} />
+        <Route path="/user-agreement" element={<TermsAndCondition />} />
         <Route path="/cookie-policy" element={<CookiesPolicy />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} /> 
-        <Route path="/comingsoon" element={<ComingSoon />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
       <Footer />
