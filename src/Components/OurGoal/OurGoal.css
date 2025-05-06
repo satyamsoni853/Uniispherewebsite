@@ -89,6 +89,7 @@
 
   .our-goal-description {
     font-size: 18px;
+    text-align: justify;
   }
 
   .our-goal-section::before {
