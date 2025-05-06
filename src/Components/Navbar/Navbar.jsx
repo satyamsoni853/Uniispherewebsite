@@ -76,7 +76,7 @@ function Navbar() {
         <div className="nav-links">
           {[
             { href: "#", class: "nav-link Navbar-Human-Library", text: "Human Library" },
-            { href: "#", class: "nav-link Navbar-Guidenest", text: "Guidenest" },
+            { href: "#", class: "nav-link Navbar-Guidenest", text: "Edu-Vault" },
             { href: "#", class: "nav-link Navbar-Blogs", text: "Blogs" },
           ].map((link, i) => (
             <React.Fragment key={link.text}>

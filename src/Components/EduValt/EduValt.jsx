@@ -106,7 +106,7 @@ function EduValt() {
       aria-label="Edu Valt Section"
     >
       <motion.div className="EduValt-title" variants={titleVariants}>
-        Edu Valt
+        Edu Vault
       </motion.div>
       <div className="EduValt-content" ref={contentRef}>
         <div className="EduValt-image-container">
