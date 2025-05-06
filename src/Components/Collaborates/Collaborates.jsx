@@ -93,7 +93,7 @@ function Collaborates() {
             className="collaborate-logo"
             aria-label="Unisphere Logo"
           />
-          <p className="collaborate-label">Unisphere</p>
+          <p className="collaborate-label">Uniisphere</p>
         </motion.div>
       </div>
     </motion.div>
