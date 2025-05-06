@@ -14,33 +14,33 @@ import Background from "./Components/Background/Background";
 import OurGoal from "./Components/OurGoal/OurGoal";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsAndCondition from "./Components/TermsAndCondition/TermsAndCondition";
-import CookiesPolicy from './Components/CookiesPolicy/CookiesPolicy'
+import CookiesPolicy from "./Components/CookiesPolicy/CookiesPolicy";
 function App() {
   return (
     <BrowserRouter>
       <Background />
-      
+
       <Routes>
         <Route
           path="/"
           element={
             <>
-            <Navbar />
-              <AboutPage />
+              {/* <Navbar /> */}
+              {/* <AboutPage /> */}
               <Peoples />
-              <Connection />
-              <EduValt />
-              <HumanLibrary />
-              <Blog />
-              <Collaborates />
-              <OurGoal />
-              <Features />
+              {/* <Connection /> */}
+              {/* <EduValt /> */}
+              {/* <HumanLibrary /> */}
+              {/* <Blog /> */}
+              {/* <Collaborates /> */}
+              {/* <OurGoal /> */}
+              {/* <Features /> */}
             </>
           }
         />
-         <Route path="/user-agreement" element={<TermsAndCondition />} />
+        <Route path="/user-agreement" element={<TermsAndCondition />} />
         <Route path="/cookie-policy" element={<CookiesPolicy />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} /> 
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
       <Footer />
