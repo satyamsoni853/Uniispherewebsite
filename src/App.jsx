@@ -15,6 +15,7 @@ import OurGoal from "./Components/OurGoal/OurGoal";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsAndCondition from "./Components/TermsAndCondition/TermsAndCondition";
 import CookiesPolicy from './Components/CookiesPolicy/CookiesPolicy'
+import ComingSoon from "./Components/ComingSoon/ComingSoon";
 function App() {
   return (
     <BrowserRouter>
@@ -41,6 +42,7 @@ function App() {
          <Route path="/user-agreement" element={<TermsAndCondition />} />
         <Route path="/cookie-policy" element={<CookiesPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} /> 
+        <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
       <Footer />
