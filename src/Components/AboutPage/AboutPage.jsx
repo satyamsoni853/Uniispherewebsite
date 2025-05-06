@@ -196,7 +196,7 @@ function AboutPage() {
       >
         <motion.h2 variants={headingVariants}>About Us?</motion.h2>
         <motion.p className="our-goal-description" variants={descriptionVariants}>
-          Unisphere is a student networking app designed to connect university students for academic collaboration, social networking, and career development. It offers features like secure messaging, event discovery, study groups, mentorship, freelancing opportunities, and psychological support to create a comprehensive platform for student engagement and growth.
+          Uniisphere is a student networking app designed to connect university students for academic collaboration, social networking, and career development. It offers features like secure messaging, event discovery, study groups, mentorship, freelancing opportunities, and psychological support to create a comprehensive platform for student engagement and growth.
         </motion.p>
       </motion.div>
 

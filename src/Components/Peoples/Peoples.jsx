@@ -99,7 +99,7 @@ function Peoples() {
       alt: "Ansh profile image",
     },
     {
-      name: "Karthikey Pandey",
+      name: "Kartikey Pandey",
       role: "Backend Developer",
       details: "Student at UPES Dehradun | Passionate about Development | Loves coding and hackathons.",
       image: Images2,
