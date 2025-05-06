@@ -25,16 +25,16 @@ function App() {
           path="/"
           element={
             <>
-              {/* <Navbar /> */}
-              {/* <AboutPage /> */}
+              <Navbar />
+              <AboutPage />
               <Peoples />
-              {/* <Connection /> */}
-              {/* <EduValt /> */}
-              {/* <HumanLibrary /> */}
-              {/* <Blog /> */}
-              {/* <Collaborates /> */}
-              {/* <OurGoal /> */}
-              {/* <Features /> */}
+              <Connection />
+              <EduValt />
+              <HumanLibrary />
+              <Blog />
+              <Collaborates />
+              <OurGoal />
+              <Features />
             </>
           }
         />

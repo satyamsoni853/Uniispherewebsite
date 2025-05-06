@@ -29,7 +29,7 @@ function OurGoal() {
   };
 
   const titleVariants = {
-    hidden: { x: -50, opacity: 0 },
+    hidden: { x: -20, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
@@ -41,7 +41,7 @@ function OurGoal() {
   };
 
   const descriptionVariants = {
-    hidden: { x: 50, opacity: 0 },
+    hidden: { x: 20, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
